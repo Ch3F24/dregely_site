@@ -17,20 +17,21 @@ class Work extends Model implements Sortable
     protected $fillable = [
         'published',
         'title',
-        'description',
+        'meta_description',
         'position',
+        'parent_work_id'
     ];
-    
+
     public $translatedAttributes = [
         'title',
-        'description',
+        'meta_description',
         'active',
     ];
-    
+
     public $slugAttributes = [
         'title',
     ];
-    
+
     public $mediasParams = [
         'cover' => [
             'default' => [

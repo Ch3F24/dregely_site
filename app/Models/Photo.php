@@ -17,18 +17,20 @@ class Photo extends Model implements Sortable
     protected $fillable = [
         'published',
         'title',
+        'meta_description',
         'print',
         'edition_number',
         'size',
         'date',
         'position',
-        'work_id'
+        'work_id',
     ];
 
     public $translatedAttributes = [
         'title',
         'print',
         'active',
+        'meta_description'
     ];
 
     public $slugAttributes = [

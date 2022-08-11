@@ -12,7 +12,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 {{--    <meta name="og:site_name" content="{{ config('app.name') }}">--}}
-{{--    @yield('meta')--}}
+    @yield('meta')
+
     @vite('resources/js/app.js')
 
     <!-- Scripts -->

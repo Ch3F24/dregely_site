@@ -22,6 +22,7 @@ class CreatePhotosTables extends Migration
         Schema::create('photo_translations', function (Blueprint $table) {
             createDefaultTranslationsTableFields($table, 'photo');
             $table->string('title')->nullable();
+            $table->text('meta_description')->nullable();
             $table->string('print')->nullable();
         });
 

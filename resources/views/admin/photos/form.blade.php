@@ -39,4 +39,8 @@
         'label' => 'Fotók',
         'max' => 20,
     ])
+
+    @section('sideFieldset')
+        @include('admin.partials.seo')
+    @endsection
 @stop

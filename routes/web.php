@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\WorkController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -15,16 +16,14 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 |
 */
 
-Route::prefix(LaravelLocalization::setLocale())->middleware(['localize', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])->get('/', function () {
-    return view('site.layouts.app');
-});
+//Route::prefix(LaravelLocalization::setLocale())->middleware(['localize', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])->get('/', function () {
+//    return view('layouts.app');
+//});
 
 //Route::get('/{slug}',[PageController::class,'view'])->name('page.view')->where('slug','.*');
 
 Route::prefix(LaravelLocalization::setLocale())->middleware(['localize', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])->group(function () {
-    Route::get('/',function () {
-        return view('site.layouts.app');
-    });
+    Route::get('/',[WorkController::class,'index'])->name('work.index');
 
     Route::get('/{page}',[PageController::class,'view'])->name('page.view');
 });

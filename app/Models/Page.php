@@ -20,12 +20,13 @@ class Page extends Model implements Sortable,LocalizedUrlRoutable
     protected $fillable = [
         'published',
         'title',
+        'meta_description',
         'position',
     ];
 
     public $translatedAttributes = [
         'title',
-        'description',
+        'meta_description',
         'active',
     ];
 

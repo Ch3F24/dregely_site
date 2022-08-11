@@ -22,7 +22,7 @@ class CreatePagesTables extends Migration
         Schema::create('page_translations', function (Blueprint $table) {
             createDefaultTranslationsTableFields($table, 'page');
             $table->string('title', 200)->nullable();
-            $table->text('description')->nullable();
+            $table->text('meta_description')->nullable();
         });
 
         Schema::create('page_slugs', function (Blueprint $table) {

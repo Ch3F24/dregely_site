@@ -1,13 +1,6 @@
 @extends('twill::layouts.form')
 
 @section('contentFields')
-    @formField('input', [
-        'name' => 'description',
-        'label' => 'Description',
-        'translated' => true,
-        'maxlength' => 100
-    ])
-
     @formField('block_editor', [
         'name' => 'default',
         'label' => 'Block',
@@ -17,4 +10,8 @@
             'social_link'
         ],
     ])
+@section('sideFieldset')
+    @include('admin.partials.seo')
+@endsection
 @stop
+

@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@section('meta')
+    @include('site.partials._meta',['meta' => $page])
+@endsection
 {{--@if($page->hasImage('header'))--}}
 {{--@section('header')--}}
 {{--    <header>--}}
