@@ -38,6 +38,13 @@
         'name' => 'photos',
         'label' => 'Fotók',
         'max' => 20,
+        'extraMetadatas' => [
+            [
+                'name' => 'landscape',
+                'label' => 'Fektetett',
+                'type' => 'checkbox'
+            ],
+        ],
     ])
 
     @section('sideFieldset')

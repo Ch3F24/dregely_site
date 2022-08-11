@@ -1,7 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 header {
-    @apply flex justify-between items-start my-12 lg:my-20;
+    @apply flex justify-between items-start my-12;
 }
+
+.swiper-button-next, .swiper-button-prev {
+    color: #000000;
+    -webkit-text-stroke: 2px white;
+}
+.swiper-pagination-bullet-active {
+    background-color: #000000;
+}
+main {
+    height: calc(100vh - 144px - 100px);
+}
+.image-container {
+    height: calc(100% - 68px);
+}
+.landscape {
+    @apply w-full max-h-full;
+}
+

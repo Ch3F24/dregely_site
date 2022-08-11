@@ -1,25 +1,63 @@
 @extends('layouts.app')
 
+{{--@section('css')--}}
+{{--    @vite('resources/css/slider.css')--}}
+{{--@endsection--}}
+
 @section('meta')
     @include('site.partials._meta')
 @endsection
 
 @section('content')
-{{--    <div class="container relative mt-6">--}}
-{{--        @if($page->sub_title)--}}
-{{--            <h1 class="font-bold text-2xl lg:text-4xl mb-5 md:mb-6 lg:mb-4">{{ $page->sub_title }}</h1>--}}
-{{--        @endif--}}
-{{--        @if($page->description)--}}
-{{--            <div class="lg:text-lg lg:w-8/12">{!! $page->description !!}</div>--}}
-{{--        @endif--}}
-{{--    </div>--}}
-{{--    @if(count($page->blocks))--}}
-{{--        <section class="mb-4">--}}
-{{--            {!! $page->renderBlocks() !!}--}}
-{{--        </section>--}}
-{{--    @endif--}}
+    <div class="container p-0 h-full relative h-[60vh]">
+        <div class="swiper mySwiper swiper-grid-column">
+            <div class="swiper-wrapper">
+                @foreach($works as $work)
+{{--                    {{dd($work->hasImage('cover','default'))}}--}}
+                    <div class="swiper-slide work-thumbnails">
+                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
+                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
+                    </div>                    <div class="swiper-slide work-thumbnails">
+                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
+                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
+                    </div>                    <div class="swiper-slide work-thumbnails">
+                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
+                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
+                    </div>                    <div class="swiper-slide work-thumbnails">
+                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
+                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
+                    </div>                    <div class="swiper-slide work-thumbnails">
+                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
+                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
+                    </div>                    <div class="swiper-slide work-thumbnails">
+                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
+                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
+                    </div>                    <div class="swiper-slide work-thumbnails">
+                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
+                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
+                    </div>                    <div class="swiper-slide work-thumbnails">
+                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
+                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
+                    </div>                    <div class="swiper-slide work-thumbnails">
+                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
+                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
+                    </div>                    <div class="swiper-slide work-thumbnails">
+                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
+                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
+                    </div>
+
+                @endforeach
+            </div>
+
+        </div>
+    </div>
+    <div class="container relative h-[44px] mt-6">
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
 @endsection
 
 @section('assets')
-    {{--    <script defer src="{{ mix('js/page.js') }}"></script>--}}
+    @vite('resources/js/works_slider.js')
 @endsection

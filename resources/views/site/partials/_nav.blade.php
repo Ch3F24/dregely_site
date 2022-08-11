@@ -10,7 +10,10 @@
             x-transition:leave="transition ease-in duration-150"
             x-transition:leave-start="opacity-100 translate-y-0"
             x-transition:leave-end="opacity-0 translate-y-1">
-            <li><a href="#">egyes</a></li>
+            @foreach($works as $work)
+                <li><a href="{{ route('work.view',$work->slug) }}">{{$work->title}}</a></li>
+
+            @endforeach
         </ul>
     </div>
     <p>

@@ -5,7 +5,11 @@ module.exports = {
       "./resources/**/*.js",
   ],
   theme: {
-        extend: {},
+        extend: {
+            fontSize: {
+                'base': '14px'
+            }
+        },
         container: {
           center: true,
           padding: '1rem',

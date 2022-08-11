@@ -14,6 +14,7 @@ class CreateWorksTables extends Migration
 
             $table->integer('position')->unsigned()->nullable();
             $table->integer('parent_work_id')->unsigned()->nullable();
+            $table->date('date')->nullable();
 
             // add those 2 columns to enable publication timeframe fields (you can use publish_start_date only if you don't need to provide the ability to specify an end date)
             // $table->timestamp('publish_start_date')->nullable();

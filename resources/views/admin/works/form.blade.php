@@ -13,6 +13,16 @@
     'label' => 'Parent',
     'options' => $works,
     ])
+    @formField('medias', [
+        'name' => 'cover',
+        'label' => 'Borító',
+    ])
+    @formField('date_picker', [
+    'name' => 'date',
+    'label' => 'Date',
+    'altFormat' => 'Y',
+    'withTime' => false
+    ])
 
     @section('sideFieldset')
         @include('admin.partials.seo')

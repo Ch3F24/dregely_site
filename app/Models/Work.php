@@ -9,6 +9,7 @@ use A17\Twill\Models\Behaviors\HasFiles;
 use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
+use App\Repositories\WorkRepository;
 
 class Work extends Model implements Sortable
 {
@@ -19,7 +20,8 @@ class Work extends Model implements Sortable
         'title',
         'meta_description',
         'position',
-        'parent_work_id'
+        'parent_work_id',
+        'date'
     ];
 
     public $translatedAttributes = [
@@ -37,29 +39,28 @@ class Work extends Model implements Sortable
             'default' => [
                 [
                     'name' => 'default',
-                    'ratio' => 16 / 9,
-                ],
-            ],
-            'mobile' => [
-                [
-                    'name' => 'mobile',
                     'ratio' => 1,
-                ],
-            ],
-            'flexible' => [
-                [
-                    'name' => 'free',
-                    'ratio' => 0,
-                ],
-                [
-                    'name' => 'landscape',
-                    'ratio' => 16 / 9,
-                ],
-                [
-                    'name' => 'portrait',
-                    'ratio' => 3 / 5,
                 ],
             ],
         ],
     ];
+
+    public function resolveRouteBinding($slug, $field = null)
+    {
+        $work = app(WorkRepository::class)->forSlug($slug);
+
+        abort_if(! $work, 404);
+
+        return $work;
+    }
+
+    public function getLocalizedRouteKey($locale)
+    {
+        return $this->getSlug($locale);
+    }
+
+    public function photos()
+    {
+        return $this->hasMany(Photo::class);
+    }
 }

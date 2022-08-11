@@ -26,4 +26,8 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(['localize', 'locale
     Route::get('/',[WorkController::class,'index'])->name('work.index');
 
     Route::get('/{page}',[PageController::class,'view'])->name('page.view');
+    Route::prefix('/works')->name('work.')->group(function () {
+        Route::get('/',[WorkController::class,'index'])->name('index');
+        Route::get('/{work}',[WorkController::class,'view'])->name('view');
+    });
 });

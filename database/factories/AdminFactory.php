@@ -24,7 +24,7 @@ class AdminFactory extends Factory
     {
         return [
             'name' => 'Chef',
-            'email' => 'chef@wst.hu',
+            'email' => 'russhh24@gmail.com',
             'published' => 1,
             'password' => '$2y$10$tDYVzl0PGLPfB0xrnWmgE.qgX3OiQ4Ykz.ctGQc2HgVN7dx0by3Gq', // password
             'role' => 'SUPERADMIN',

@@ -15,6 +15,7 @@
     @yield('meta')
 
     @vite('resources/js/app.js')
+    @yield('css')
 
     <!-- Scripts -->
 {{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
@@ -32,20 +33,23 @@
 {{--    @include('front.partials._svg_links')--}}
 
 </head>
-<body class="min-h-screen flex flex-col ">
+<body class="h-screen flex flex-col relative">
+{{--<body class="relative h-full">--}}
     @include('site.partials._header')
 
 {{--    <div id="app" class="flex-1">--}}
 {{--        @yield('header')--}}
 
-    <main class="container md:flex">
+    <main class="container md:flex flex-1 md:gap-x-4">
         <div class="md:w-3/12">
             @include('site.partials._nav')
         </div>
-        <div class="md:w-9/12">
+        <div class="md:w-9/12 relative">
             @yield('content')
         </div>
     </main>
+    <footer class="h-[100px]">
+    </footer>
 
 {{--    </div>--}}
 
@@ -53,7 +57,7 @@
 
 </body>
 
-{{--@yield('assets')--}}
+@yield('assets')
 {{--@include('front/partials/_analytics')--}}
 <script src="//unpkg.com/alpinejs" defer></script>
 
