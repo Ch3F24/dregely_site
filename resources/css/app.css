@@ -2,23 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 header {
-    @apply flex justify-between items-start my-12;
+    @apply flex justify-between items-start py-12;
 }
 
-.swiper-button-next, .swiper-button-prev {
+main .swiper-button-next,
+main .swiper-button-prev {
     color: #000000;
     -webkit-text-stroke: 2px white;
 }
-.swiper-pagination-bullet-active {
+main .swiper-button-prev {
+    left: -28px;
+}
+main .swiper-button-next {
+    right: -28px;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
     background-color: #000000;
 }
 main {
     height: calc(100vh - 144px - 100px);
 }
 .image-container {
-    height: calc(100% - 68px);
+    height: calc(100% - 144px);
 }
 .landscape {
     @apply w-full max-h-full;
+}
+.slider-container {
+    max-height: calc(100% - 68px);
 }
 

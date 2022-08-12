@@ -33,18 +33,18 @@
 {{--    @include('front.partials._svg_links')--}}
 
 </head>
-<body class="h-screen flex flex-col relative">
+<body class="h-screen relative">
 {{--<body class="relative h-full">--}}
     @include('site.partials._header')
 
 {{--    <div id="app" class="flex-1">--}}
 {{--        @yield('header')--}}
 
-    <main class="container md:flex flex-1 md:gap-x-4">
+    <main class="container md:flex md:gap-x-4">
         <div class="md:w-3/12">
             @include('site.partials._nav')
         </div>
-        <div class="md:w-9/12 relative">
+        <div class="md:w-9/12 relative flex flex-col items-start">
             @yield('content')
         </div>
     </main>

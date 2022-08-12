@@ -9,53 +9,25 @@
 @endsection
 
 @section('content')
-    <div class="container p-0 h-full relative h-[60vh]">
-        <div class="swiper mySwiper swiper-grid-column">
-            <div class="swiper-wrapper">
-                @foreach($works as $work)
-{{--                    {{dd($work->hasImage('cover','default'))}}--}}
-                    <div class="swiper-slide work-thumbnails">
-                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
-                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
-                    </div>                    <div class="swiper-slide work-thumbnails">
-                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
-                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
-                    </div>                    <div class="swiper-slide work-thumbnails">
-                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
-                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
-                    </div>                    <div class="swiper-slide work-thumbnails">
-                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
-                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
-                    </div>                    <div class="swiper-slide work-thumbnails">
-                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
-                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
-                    </div>                    <div class="swiper-slide work-thumbnails">
-                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
-                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
-                    </div>                    <div class="swiper-slide work-thumbnails">
-                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
-                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
-                    </div>                    <div class="swiper-slide work-thumbnails">
-                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
-                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
-                    </div>                    <div class="swiper-slide work-thumbnails">
-                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
-                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
-                    </div>                    <div class="swiper-slide work-thumbnails">
-                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">
-                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>
-                    </div>
+    <div id="app" class="h-full w-full"></div>
+    {{--    <div class="container p-0 relative flex-1 slider-container">--}}
+{{--        <div class="swiper mySwiper swiper-grid-column">--}}
+{{--            <div class="swiper-wrapper">--}}
+{{--                @foreach($works as $work)--}}
+{{--                    <div class="swiper-slide work-thumbnails">--}}
+{{--                        <img src="{{ $work->image('cover','default') }}" alt="image" class="h-full w-full object-cover">--}}
+{{--                        <p>{{ $work->title }} - {{ \Carbon\Carbon::parse($work->date)->format('Y') }}</p>--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
+{{--            </div>--}}
 
-                @endforeach
-            </div>
-
-        </div>
-    </div>
-    <div class="container relative h-[44px] mt-6">
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-    </div>
+{{--        </div>--}}
+{{--    </div>--}}
+{{--    <div class="container relative h-[44px] mt-6">--}}
+{{--        <div class="swiper-pagination"></div>--}}
+{{--        <div class="swiper-button-next"></div>--}}
+{{--        <div class="swiper-button-prev"></div>--}}
+{{--    </div>--}}
 @endsection
 
 @section('assets')

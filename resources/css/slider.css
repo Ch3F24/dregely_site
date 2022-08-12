@@ -1,13 +1,13 @@
 .work-thumbnails {
-    display: block!important;
-    @apply overflow-hidden;
+    /*display: block!important;*/
+    @apply overflow-hidden flex-col items-start content-start;
     /*@apply grid-flow-row auto-rows-max;*/
 }
 .work-thumbnails p {
     @apply text-base mt-2;
 }
 .work-thumbnails img {
-    height: 90%;
+    /*height: 90%;*/
 }
 .swiper {
     width: 100%;
@@ -16,7 +16,7 @@
     margin-right: auto;
 }
 .swiper-wrapper {
-    width: 100%;
+    width: 100% !important;
 }
 .swiper-slide {
     text-align: center;
