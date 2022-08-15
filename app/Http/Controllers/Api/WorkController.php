@@ -18,13 +18,11 @@ class WorkController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index()
     {
-        $works = WorksCollection::collection($this->repository->all());
-
-        return $works;
+        return WorksCollection::collection($this->repository->all());
     }
 
     /**

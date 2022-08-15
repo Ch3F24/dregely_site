@@ -1,7 +1,5 @@
 .work-thumbnails {
-    /*display: block!important;*/
     @apply overflow-hidden flex-col items-start content-start;
-    /*@apply grid-flow-row auto-rows-max;*/
 }
 .work-thumbnails p {
     @apply text-base mt-2;

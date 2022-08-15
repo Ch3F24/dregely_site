@@ -1,6 +1,7 @@
 <template>
-    <div class="container p-0 relative flex-1 slider-container">
+    <div class="h-full p-0 relative flex-1 slider-container">
         <swiper
+            :cssMode=true
             :modules="modules"
             :slidesPerView="4"
             :spaceBetween="30"
@@ -18,10 +19,10 @@
             }"
             class="work-slider h-full w-full">
             <swiper-slide class="flex-row h-full w-full" v-for="work in works">
-                <div class="w-full h-full">
-                    <img loading="lazy" :src="work.cover" alt="first" class="object-contain max-h-full my-auto" />
+                <a :href="lang + '/works/' + work.slug" class="w-full h-full z-10 swiper-no-swiping" :title="work.title">
+                    <img loading="lazy" :src="work.cover" alt="first" class="object-cover max-h-full my-auto w-full" :title="work.title" />
                     <p>{{ work.title }} - {{ work.date}}</p>
-                </div>
+                </a>
             </swiper-slide>
         </swiper>
     </div>
@@ -53,14 +54,15 @@ export default {
             works: [],
             modules: [Pagination, Navigation, Grid],
             currentIndex: 0,
-            activePhoto: []
+            activePhoto: [],
+            lang: ''
       }
     },
     components: {Swiper, SwiperSlide},
 
     mounted() {
         this.loadWorks()
-
+        this.lang = document.documentElement.lang;
     },
     methods: {
         loadWorks() {
@@ -78,17 +80,102 @@ export default {
 
             return image.src + '&' + queryString;
         },
-        // onHorizontalSlideChange(swiper) {
-        //     this.currentIndex = swiper.activeIndex
-        //     this.activePhoto = this.photos[swiper.activeIndex]
-        // },
-        // selectThumbnail(key) {
-        //     const activeSlide = document.querySelector('.swiper-slide-active').children[0].children[0]
-        //     activeSlide.src = this.activePhoto.photos[key].src
-        //
-        //     // this.activePhoto.photos[0].src = this.activePhoto.photos[key].src
-        // }
     }
 
 }
 </script>
+
+
+<!--<template>-->
+<!--    <div class="h-full p-0 relative flex-1 slider-container">-->
+
+<!--        <swiper-->
+<!--            :slidesPerView="4"-->
+<!--            :grid="{-->
+<!--                rows: 2,-->
+<!--            }"-->
+<!--            :spaceBetween="30"-->
+<!--            :pagination="{-->
+<!--                enabled: true,-->
+<!--                type: 'bullets',-->
+<!--                el: '.swiper-pagination',-->
+<!--            }"-->
+<!--            :navigation="{-->
+<!--                nextEl: '.swiper-button-next',-->
+<!--                prevEl: '.swiper-button-prev',-->
+<!--            }"-->
+<!--            :modules="modules"-->
+<!--            class="work-slider h-full w-full"-->
+<!--        >-->
+<!--            <swiper-slide>Slide 1</swiper-slide><swiper-slide>Slide 2</swiper-slide-->
+<!--        ><swiper-slide>Slide 3</swiper-slide><swiper-slide>Slide 4</swiper-slide-->
+<!--        ><swiper-slide>Slide 5</swiper-slide><swiper-slide>Slide 6</swiper-slide-->
+<!--        ><swiper-slide>Slide 7</swiper-slide><swiper-slide>Slide 8</swiper-slide-->
+<!--        ><swiper-slide>Slide 9</swiper-slide>-->
+<!--        </swiper>-->
+<!--    </div>-->
+<!--    <div class="relative h-[44px] mt-6">-->
+<!--        <div class="swiper-pagination"></div>-->
+<!--        <div class="swiper-button-next"></div>-->
+<!--        <div class="swiper-button-prev"></div>-->
+<!--    </div>-->
+<!--</template>-->
+<!--<script>-->
+<!--// Import Swiper Vue.js components-->
+<!--import { Swiper, SwiperSlide } from "swiper/vue";-->
+
+<!--// Import Swiper styles-->
+<!--import "swiper/css";-->
+
+<!--import "swiper/css/grid";-->
+<!--import "swiper/css/pagination";-->
+
+<!--// import "./style.css";-->
+
+<!--// import required modules-->
+<!--import { Grid, Pagination } from "swiper";-->
+
+<!--export default {-->
+<!--    components: {-->
+<!--        Swiper,-->
+<!--        SwiperSlide,-->
+<!--    },-->
+<!--    setup() {-->
+<!--        return {-->
+<!--            modules: [Grid, Pagination],-->
+<!--        };-->
+<!--    },-->
+<!--};-->
+<!--</script>-->
+<!--<style>-->
+
+
+<!--.swiper {-->
+<!--    width: 100%;-->
+<!--    height: 100%;-->
+<!--    margin-left: auto;-->
+<!--    margin-right: auto;-->
+<!--}-->
+
+<!--.swiper-slide {-->
+<!--    text-align: center;-->
+<!--    font-size: 18px;-->
+<!--    background: #fff;-->
+<!--    height: calc((100% - 30px) / 2) !important;-->
+
+<!--    /* Center slide text vertically */-->
+<!--    display: -webkit-box;-->
+<!--    display: -ms-flexbox;-->
+<!--    display: -webkit-flex;-->
+<!--    display: flex;-->
+<!--    -webkit-box-pack: center;-->
+<!--    -ms-flex-pack: center;-->
+<!--    -webkit-justify-content: center;-->
+<!--    justify-content: center;-->
+<!--    -webkit-box-align: center;-->
+<!--    -ms-flex-align: center;-->
+<!--    -webkit-align-items: center;-->
+<!--    align-items: center;-->
+<!--}-->
+
+<!--</style>-->

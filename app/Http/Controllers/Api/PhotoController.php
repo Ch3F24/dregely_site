@@ -12,13 +12,12 @@ class PhotoController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index(Request $request)
     {
         $work = Work::query()->findOrFail($request->id);
         return PhotoCollection::collection($work->photos);
-
 //        $photos = $work->photos;
 //        return $photos;
     }
