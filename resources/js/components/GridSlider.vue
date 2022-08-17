@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full p-0 relative flex-1 slider-container">
+    <div class="h-full p-0 relative flex-1 slider-container" v-if="slides">
         <swiper
             :cssMode=true
             :modules="modules"
@@ -18,16 +18,16 @@
                 el: '.swiper-pagination',
             }"
             class="work-slider h-full w-full">
-            <swiper-slide class="flex-row h-full w-full" v-for="work in works">
-                <a :href="lang + '/works/' + work.slug" class="w-full h-full z-10 swiper-no-swiping" :title="work.title">
-                    <img loading="lazy" :src="work.cover" alt="first" class="object-cover max-h-full my-auto w-full" :title="work.title" />
-                    <p>{{ work.title }} - {{ work.date}}</p>
+            <swiper-slide class="flex-row h-full w-full" v-for="slide in slides">
+                <a :href="lang + '/works/' + slide.slug" class="w-full h-full z-10 swiper-no-swiping" :title="slide.title">
+                    <img loading="lazy" :src="slide.cover" alt="first" class="object-cover max-h-full my-auto w-full" :title="slide.title" />
+                    <p>{{ slide.title }} - {{ slide.date}}</p>
                 </a>
             </swiper-slide>
         </swiper>
     </div>
 
-    <div class="container relative h-[44px] mt-6">
+    <div class="container relative h-[44px] mt-6" v-if="slides">
         <div class="swiper-pagination"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -51,24 +51,24 @@ export default {
     name: "slider.vue",
     data() {
       return {
-            works: [],
+            slides: [],
             modules: [Pagination, Navigation, Grid],
             currentIndex: 0,
-            activePhoto: [],
+            activeSlide: [],
             lang: ''
       }
     },
     components: {Swiper, SwiperSlide},
 
     mounted() {
-        this.loadWorks()
+        this.loadSlides()
         this.lang = document.documentElement.lang;
     },
     methods: {
-        loadWorks() {
+        loadSlides() {
             Axios.get('/api/works').then(e => {
-                this.works = e.data.data
-                // this.activePhoto = e.data.data[0]
+                this.slides = e.data.data
+                this.activeSlide = e.data.data[0]
             }).catch(e => {
                 console.log(e)
             })
@@ -81,7 +81,6 @@ export default {
             return image.src + '&' + queryString;
         },
     }
-
 }
 </script>
 
