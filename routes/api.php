@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/photos/{id}',[PhotoController::class,'index'])->name('photo.index');
 Route::get('/works',[WorkController::class,'index'])->name('work.index');
+Route::get('/works-nav',[WorkController::class,'nav'])->name('work.nav');

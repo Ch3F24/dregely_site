@@ -13,7 +13,7 @@ export default defineConfig({
             },
         }),
         laravel({
-            input: ['resources/js/app.js','resources/js/works_slider.js','resources/js/slider.js'],
+            input: ['resources/js/app.js','resources/js/side.js','resources/js/works_slider.js','resources/js/slider.js'],
             refresh: true,
         }),
     ],

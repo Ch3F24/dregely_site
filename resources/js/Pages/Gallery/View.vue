@@ -17,15 +17,13 @@
             default: () => ({})
         },
         work: {
-            type: String
+            type: Object
         }
     })
 
     const modules = [Pagination,Navigation]
     const currentIndex = ref(0)
-    const activePhoto = ref(props.photos.data[0])
-
-
+    const activePhoto = ref([])
 
     function onHorizontalSlideChange(swiper) {
         currentIndex.value = swiper.activeIndex
@@ -37,12 +35,18 @@
         activeSlide.src = activePhoto.value.photos[key].src
     }
 
+    onMounted(() => {
+        if (props.photos.data.length) {
+            activePhoto.value = props.photos.data[0]
+        }
+    })
+
 </script>
 
 <template>
     <Head :title="work.title"/>
 
-    <Layout class="">
+    <Layout>
         <div class="container image-container relative">
             <swiper
                 @slideChange="onHorizontalSlideChange"
@@ -71,7 +75,7 @@
         </div>
         <div class="container relative mt-6 flex items-center">
             <div class="w-1/3 h-full">
-                <div  v-if="activePhoto && activePhoto.photos && activePhoto.photos.length > 1" class="w-full h-ful flex space-x-4">
+                <div  v-if="activePhoto" class="w-full h-ful flex space-x-4">
                     <div class="w-1/3 z-50 cursor-pointer" v-for="(thumb,key) in activePhoto.photos" @click="selectThumbnail(key)">
                         <img loading="lazy" :src="thumb['src']" alt="first" class="w-[100px] h-[100px] object-cover" >
                     </div>
@@ -80,7 +84,7 @@
             <div class="w-1/3 h-full">
                 <div class="swiper-pagination"></div>
             </div>
-            <div class="w-1/3" v-if="this.activePhoto">
+            <div class="w-1/3" v-if="activePhoto">
                 <p>
                     <span class="font-bold" v-if="activePhoto.title">{{ activePhoto.title }}</span>
                     <span v-if="activePhoto.date"> ,{{ activePhoto.date }}</span>

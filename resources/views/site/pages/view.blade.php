@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('meta')
     @include('site.partials._meta',['meta' => $page])
 @endsection

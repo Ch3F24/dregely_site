@@ -84,4 +84,9 @@ class WorkController extends Controller
     {
         //
     }
+
+    public function nav()
+    {
+        return WorksCollection::collection($this->repository->all());
+    }
 }

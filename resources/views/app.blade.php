@@ -18,7 +18,6 @@
     </head>
     <body class="h-screen relative">
         @include('site.partials._header')
-
-    @inertia
+        @inertia
     </body>
 </html>

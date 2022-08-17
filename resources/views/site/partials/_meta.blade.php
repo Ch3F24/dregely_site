@@ -1,3 +1,4 @@
+<title>{{ $meta->title . ' - ' ?? '' }}{{ config('app.name', 'Dregely' ) }}</title>
 <meta property="og:site_name" content="{{ config('app.name', 'Laravel') }}">
 <meta data-hid="charset" charset="utf-8">
 <meta data-hid="mobile-web-app-capable" name="mobile-web-app-capable" content="yes">

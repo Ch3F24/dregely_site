@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Inertia\Inertia;
 
 /**
  * @property PageRepository $repository
@@ -23,7 +24,9 @@ class PageController extends BaseController
     public function view(Page $page)
     {
 //        $page = $this->repository->forSlug($slug);
-
+//        return Inertia::render(
+//            'Blank'
+//        )->withViewData(['data' => $page]);
         return view('site.pages.view',compact('page'));
     }
 }
