@@ -12,9 +12,10 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 {{--    <meta name="og:site_name" content="{{ config('app.name') }}">--}}
-    @yield('meta')
-
+{{--    @yield('meta')--}}
+    @routes
     @vite('resources/js/app.js')
+    @inertiaHead
     @yield('css')
 
     <!-- Scripts -->
@@ -33,28 +34,19 @@
 {{--    @include('front.partials._svg_links')--}}
 
 </head>
-<body class="h-screen relative">
-{{--<body class="relative h-full">--}}
-    @include('site.partials._header')
-
-{{--    <div id="app" class="flex-1">--}}
-{{--        @yield('header')--}}
-
-    <main class="container md:flex md:gap-x-4">
-        <div class="md:w-3/12">
-            @include('site.partials._nav')
-        </div>
-        <div class="md:w-9/12 relative flex flex-col items-start">
-            @yield('content')
-        </div>
-    </main>
-    <footer class="h-[100px]">
-    </footer>
-
-{{--    </div>--}}
-
-{{--    @include('front/partials/_footer')--}}
-
+<body class="h-screen relative" id="app">
+        @inertia
+{{--    @include('site.partials._header')--}}
+{{--    <main class="container md:flex md:gap-x-4">--}}
+{{--        <div class="md:w-3/12">--}}
+{{--            @include('site.partials._nav')--}}
+{{--        </div>--}}
+{{--        <div class="md:w-9/12 relative flex flex-col items-start">--}}
+{{--            @yield('content')--}}
+{{--        </div>--}}
+{{--    </main>--}}
+{{--    <footer class="h-[100px]">--}}
+{{--    </footer>--}}
 </body>
 
 @yield('assets')

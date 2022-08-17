@@ -1,5 +1,31 @@
+<script setup>
+    import { ref } from 'vue';
+    import { Link, Head } from "@inertiajs/inertia-vue3";
+
+    import { Swiper, SwiperSlide } from 'swiper/vue';
+    import {Pagination,Navigation, Grid} from 'swiper';
+    import "swiper/css";
+    import "swiper/css/pagination";
+    import "swiper/css/navigation";
+    import "swiper/css/grid";
+
+    import '../../css/slider.css';
+
+    const works =  ref([])
+    const modules =  [Pagination, Navigation, Grid]
+    const currentIndex =  ref(0)
+    const activePhoto =  ref([])
+    const lang =  document.documentElement.lang
+
+    const props = defineProps({
+        worksData: {
+            type: Object
+        }
+    })
+</script>
+
 <template>
-    <div class="h-full p-0 relative flex-1 slider-container">
+    <div class="h-full p-0 relative flex-1 slider-container w-full">
         <swiper
             :cssMode=true
             :modules="modules"
@@ -18,11 +44,16 @@
                 el: '.swiper-pagination',
             }"
             class="work-slider h-full w-full">
-            <swiper-slide class="flex-row h-full w-full" v-for="work in works">
-                <a :href="lang + '/works/' + work.slug" class="w-full h-full z-10 swiper-no-swiping" :title="work.title">
+            <swiper-slide class="flex-row h-full w-full" v-for="work in worksData">
+<!--                <a :href="lang + '/works/' + work.slug" class="w-full h-full z-10 swiper-no-swiping" :title="work.title">-->
+<!--                    <img loading="lazy" :src="work.cover" alt="first" class="object-cover max-h-full my-auto w-full" :title="work.title" />-->
+<!--                    <p>{{ work.title }} - {{ work.date}}</p>-->
+<!--                </a>-->
+
+                <Link :href="route('gallery.show',work.slug)" class="w-full h-full z-10 swiper-no-swiping" :title="work.title">
                     <img loading="lazy" :src="work.cover" alt="first" class="object-cover max-h-full my-auto w-full" :title="work.title" />
                     <p>{{ work.title }} - {{ work.date}}</p>
-                </a>
+                </Link>
             </swiper-slide>
         </swiper>
     </div>
@@ -34,148 +65,53 @@
     </div>
 </template>
 
-<script>
-import Axios from 'axios';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-
-import {Pagination,Navigation, Grid} from 'swiper';
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/grid";
-
-import '../../css/slider.css';
-
-
-export default {
-    name: "slider.vue",
-    data() {
-      return {
-            works: [],
-            modules: [Pagination, Navigation, Grid],
-            currentIndex: 0,
-            activePhoto: [],
-            lang: ''
-      }
-    },
-    components: {Swiper, SwiperSlide},
-
-    mounted() {
-        this.loadWorks()
-        this.lang = document.documentElement.lang;
-    },
-    methods: {
-        loadWorks() {
-            Axios.get('/api/works').then(e => {
-                this.works = e.data.data
-                // this.activePhoto = e.data.data[0]
-            }).catch(e => {
-                console.log(e)
-            })
-        },
-        resize(image,params = []) {
-            const queryString = Object.keys(params).map((key) => {
-                return encodeURIComponent(key) + '=' + encodeURIComponent(params[key])
-            }).join('&');
-
-            return image.src + '&' + queryString;
-        },
-    }
-
-}
-</script>
-
-
-<!--<template>-->
-<!--    <div class="h-full p-0 relative flex-1 slider-container">-->
-
-<!--        <swiper-->
-<!--            :slidesPerView="4"-->
-<!--            :grid="{-->
-<!--                rows: 2,-->
-<!--            }"-->
-<!--            :spaceBetween="30"-->
-<!--            :pagination="{-->
-<!--                enabled: true,-->
-<!--                type: 'bullets',-->
-<!--                el: '.swiper-pagination',-->
-<!--            }"-->
-<!--            :navigation="{-->
-<!--                nextEl: '.swiper-button-next',-->
-<!--                prevEl: '.swiper-button-prev',-->
-<!--            }"-->
-<!--            :modules="modules"-->
-<!--            class="work-slider h-full w-full"-->
-<!--        >-->
-<!--            <swiper-slide>Slide 1</swiper-slide><swiper-slide>Slide 2</swiper-slide-->
-<!--        ><swiper-slide>Slide 3</swiper-slide><swiper-slide>Slide 4</swiper-slide-->
-<!--        ><swiper-slide>Slide 5</swiper-slide><swiper-slide>Slide 6</swiper-slide-->
-<!--        ><swiper-slide>Slide 7</swiper-slide><swiper-slide>Slide 8</swiper-slide-->
-<!--        ><swiper-slide>Slide 9</swiper-slide>-->
-<!--        </swiper>-->
-<!--    </div>-->
-<!--    <div class="relative h-[44px] mt-6">-->
-<!--        <div class="swiper-pagination"></div>-->
-<!--        <div class="swiper-button-next"></div>-->
-<!--        <div class="swiper-button-prev"></div>-->
-<!--    </div>-->
-<!--</template>-->
 <!--<script>-->
-<!--// Import Swiper Vue.js components-->
-<!--import { Swiper, SwiperSlide } from "swiper/vue";-->
+<!--import Axios from 'axios';-->
+<!--import { Swiper, SwiperSlide } from 'swiper/vue';-->
 
-<!--// Import Swiper styles-->
+<!--import {Pagination,Navigation, Grid} from 'swiper';-->
 <!--import "swiper/css";-->
-
-<!--import "swiper/css/grid";-->
 <!--import "swiper/css/pagination";-->
+<!--import "swiper/css/navigation";-->
+<!--import "swiper/css/grid";-->
 
-<!--// import "./style.css";-->
+<!--import '../../css/slider.css';-->
 
-<!--// import required modules-->
-<!--import { Grid, Pagination } from "swiper";-->
 
 <!--export default {-->
-<!--    components: {-->
-<!--        Swiper,-->
-<!--        SwiperSlide,-->
+<!--    name: "slider.vue",-->
+<!--    data() {-->
+<!--      return {-->
+<!--            works: [],-->
+<!--            modules: [Pagination, Navigation, Grid],-->
+<!--            currentIndex: 0,-->
+<!--            activePhoto: [],-->
+<!--            lang: ''-->
+<!--      }-->
 <!--    },-->
-<!--    setup() {-->
-<!--        return {-->
-<!--            modules: [Grid, Pagination],-->
-<!--        };-->
+<!--    components: {Swiper, SwiperSlide},-->
+
+<!--    mounted() {-->
+<!--        this.loadWorks()-->
+<!--        this.lang = document.documentElement.lang;-->
 <!--    },-->
-<!--};-->
+<!--    methods: {-->
+<!--        loadWorks() {-->
+<!--            Axios.get('/api/works').then(e => {-->
+<!--                this.works = e.data.data-->
+<!--                // this.activePhoto = e.data.data[0]-->
+<!--            }).catch(e => {-->
+<!--                console.log(e)-->
+<!--            })-->
+<!--        },-->
+<!--        resize(image,params = []) {-->
+<!--            const queryString = Object.keys(params).map((key) => {-->
+<!--                return encodeURIComponent(key) + '=' + encodeURIComponent(params[key])-->
+<!--            }).join('&');-->
+
+<!--            return image.src + '&' + queryString;-->
+<!--        },-->
+<!--    }-->
+
+<!--}-->
 <!--</script>-->
-<!--<style>-->
-
-
-<!--.swiper {-->
-<!--    width: 100%;-->
-<!--    height: 100%;-->
-<!--    margin-left: auto;-->
-<!--    margin-right: auto;-->
-<!--}-->
-
-<!--.swiper-slide {-->
-<!--    text-align: center;-->
-<!--    font-size: 18px;-->
-<!--    background: #fff;-->
-<!--    height: calc((100% - 30px) / 2) !important;-->
-
-<!--    /* Center slide text vertically */-->
-<!--    display: -webkit-box;-->
-<!--    display: -ms-flexbox;-->
-<!--    display: -webkit-flex;-->
-<!--    display: flex;-->
-<!--    -webkit-box-pack: center;-->
-<!--    -ms-flex-pack: center;-->
-<!--    -webkit-justify-content: center;-->
-<!--    justify-content: center;-->
-<!--    -webkit-box-align: center;-->
-<!--    -ms-flex-align: center;-->
-<!--    -webkit-align-items: center;-->
-<!--    align-items: center;-->
-<!--}-->
-
-<!--</style>-->

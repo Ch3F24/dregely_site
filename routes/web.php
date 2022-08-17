@@ -23,11 +23,15 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 //Route::get('/{slug}',[PageController::class,'view'])->name('page.view')->where('slug','.*');
 
 Route::prefix(LaravelLocalization::setLocale())->middleware(['localize', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])->group(function () {
-    Route::get('/',[WorkController::class,'index'])->name('work.index');
+//    Route::get('/',[WorkController::class,'index'])->name('work.index');
+    Route::get('/',[\App\Http\Controllers\Api\WorkController::class,'index'])->name('home');
 
-    Route::get('/{page}',[PageController::class,'view'])->name('page.view');
-    Route::prefix('/works')->name('work.')->group(function () {
-        Route::get('/',[WorkController::class,'index'])->name('index');
-        Route::get('/{work}',[WorkController::class,'view'])->name('view');
+//    Route::get('/{page}',[PageController::class,'view'])->name('page.view');
+    Route::prefix('/gallery')->name('gallery.')->group(function () {
+//        Route::get('/',[WorkController::class,'index'])->name('index');
+//        Route::get('/{work}',[WorkController::class,'view'])->name('view');
+        Route::get('/{work}',[\App\Http\Controllers\Api\WorkController::class,'show'])->name('show');
     });
+//
+//    Route::resource('gallery',\App\Http\Controllers\Api\WorkController::class);
 });

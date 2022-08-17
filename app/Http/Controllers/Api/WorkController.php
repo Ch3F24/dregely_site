@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\PhotoCollection;
 use App\Http\Resources\WorksCollection;
+use App\Models\Work;
 use App\Repositories\WorkRepository;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class WorkController extends Controller
 {
@@ -18,11 +21,17 @@ class WorkController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     * @return \Inertia\Response
      */
     public function index()
     {
-        return WorksCollection::collection($this->repository->all());
+//        return WorksCollection::collection($this->repository->all());
+//        dd(Work::query()->with('medias')->get());
+        return Inertia::render(
+            'Gallery/Index',[
+                'works' => WorksCollection::collection($this->repository->all())
+            ]
+        );
     }
 
     /**
@@ -40,11 +49,17 @@ class WorkController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        //
+        $work = $this->repository->forSlug($slug);
+        return Inertia::render(
+            'Gallery/View',[
+                'photos' => PhotoCollection::collection($work->photos->where('published')),
+                'work' => $work->only('title')
+            ]
+        );
     }
 
     /**

@@ -16,6 +16,7 @@ class WorksCollection extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'cover' => $this->resource->image('cover','default'),
             'date' => Carbon::parse($this->date)->format('Y'),
             'title' => $this->title,
