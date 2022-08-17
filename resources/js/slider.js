@@ -1,8 +1,10 @@
-import { createApp } from 'vue';
+import { createApp } from 'vue/dist/vue.esm-bundler';
 import Slider from './components/Slider.vue'
 
-const app = createApp(Slider)
-app.mount("#app");
+// const app = createApp(Slider)
+const app = createApp({})
+app.component('slider',Slider)
+app.mount('#app');
 
 
 

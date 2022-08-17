@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ArticleController;
 use App\Http\Controllers\Api\PhotoController;
 use App\Http\Controllers\Api\WorkController;
 use Illuminate\Http\Request;
@@ -20,5 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/photos/{id}',[PhotoController::class,'index'])->name('photo.index');
+Route::get('/photos/{id}',[PhotoController::class,'index'])->name('api.photo.index');
+Route::get('/articles',[ArticleController::class,'index'])->name('api.article.index');
 Route::get('/works',[WorkController::class,'index'])->name('work.index');

@@ -13,4 +13,8 @@ return [
         'title' => 'Pages',
         'module' => true,
     ],
+    'articles' => [
+        'title' => 'Articles',
+        'module' => true,
+    ],
 ];

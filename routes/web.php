@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\WorkController;
 use Illuminate\Support\Facades\Route;
@@ -25,9 +26,12 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 Route::prefix(LaravelLocalization::setLocale())->middleware(['localize', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])->group(function () {
     Route::get('/',[WorkController::class,'index'])->name('work.index');
 
-    Route::get('/{page}',[PageController::class,'view'])->name('page.view');
+    Route::get('/articles',[ArticleController::class,'index'])->name('article.index');
+
     Route::prefix('/works')->name('work.')->group(function () {
         Route::get('/',[WorkController::class,'index'])->name('index');
         Route::get('/{work}',[WorkController::class,'view'])->name('view');
     });
+
+    Route::get('/{page}',[PageController::class,'view'])->name('page.view');
 });

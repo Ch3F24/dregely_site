@@ -23,7 +23,7 @@
 // });
 
 import { createApp } from 'vue';
-import Slider from './components/Works.vue'
+import Slider from './components/GridSlider.vue'
 
 const app = createApp(Slider)
 app.mount("#app");
