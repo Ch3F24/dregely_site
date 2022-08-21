@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full p-0 relative flex-1 slider-container" v-if="slides">
+    <div class="h-full pb-4 relative flex-1 slider-container" v-if="slides">
         <swiper
             :cssMode=true
             :modules="modules"
@@ -19,15 +19,18 @@
             }"
             class="work-slider h-full w-full">
             <swiper-slide class="flex-row h-full w-full" v-for="slide in slides">
-                <a :href="lang + '/works/' + slide.slug" class="w-full h-full z-10 swiper-no-swiping" :title="slide.title">
-                    <img loading="lazy" :src="slide.cover" alt="first" class="object-cover max-h-full my-auto w-full" :title="slide.title" />
-                    <p>{{ slide.title }} - {{ slide.date}}</p>
+                <a :href="lang + '/works/' + slide.slug" class="w-full h-full z-10 swiper-no-swiping  flex flex-col" :title="slide.title">
+                    <div class="w-full flex-1 overflow-hidden">
+                        <div class="h-full w-full bg-cover bg-no-repeat bg-center hover:scale-110 transition-transform	" :style="{ backgroundImage: 'url(' + slide.cover + ')' }"></div>
+                    </div>
+<!--                    <img loading="lazy" :src="slide.cover" alt="first" class="object-cover max-h-[85%] my-auto w-full" :title="slide.title" />-->
+                    <p>{{ slide.title }} - {{ slide.year }}</p>
                 </a>
             </swiper-slide>
         </swiper>
     </div>
 
-    <div class="container relative h-[44px] mt-6" v-if="slides">
+    <div class="relative min-h-[20%]" v-if="slides">
         <div class="swiper-pagination"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>

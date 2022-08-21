@@ -40,15 +40,15 @@
 {{--    <div id="app" class="flex-1">--}}
 {{--        @yield('header')--}}
 
-    <main class="container md:flex md:gap-x-4">
-        <div class="md:w-3/12">
+    <main class="container md:flex md:gap-x-4 py-4 @if(isset($autoHeight)) h-auto min-h-auto @endif">
+        <div class="md:w-3/12 overflow-scroll h-full">
             @include('site.partials._nav')
         </div>
         <div class="md:w-9/12 relative flex flex-col items-start">
             @yield('content')
         </div>
     </main>
-    <footer class="h-[100px]">
+    <footer class="h-[50px]">
     </footer>
 
 {{--    </div>--}}

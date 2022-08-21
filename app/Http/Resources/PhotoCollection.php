@@ -29,8 +29,8 @@ class PhotoCollection extends JsonResource
             'print' => $this->print,
             'edition_number' => $this->edition_number,
             'size' => $this->size,
-            'date' => Carbon::parse($this->date)->format('Y'),
-            'photos' => $photos
+            'year' => Carbon::parse($this->date)->format('Y'),
+            'photos' => $photos ?? null
         ];
     }
 }

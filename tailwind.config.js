@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -9,11 +10,14 @@ module.exports = {
         extend: {
             fontSize: {
                 'base': '14px'
+            },
+            colors: {
+              'dgrey': '#464646',
             }
         },
         container: {
           center: true,
-          padding: '1rem',
+          padding: '3rem',
           // screens: {
           //     md: '688px',
           //     lg: '920px',
@@ -22,5 +26,10 @@ module.exports = {
           // },
         }
   },
-  plugins: [],
+  plugins: [
+      require('tailwind-scrollbar'),
+  ],
+    variants: {
+        scrollbar: ['rounded']
+    }
 }

@@ -1,6 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --head-height: 176px;
+    --footer-heigth: 50px;
+}
+
+a,p,h1,h2,h3,h4 {
+    @apply text-dgrey
+}
 header {
     @apply flex justify-between items-start py-12;
 }
@@ -10,20 +19,22 @@ main .swiper-button-prev {
     -webkit-text-stroke: 2px white;
 }
 main .swiper-button-prev {
-    left: -28px;
+    left: 0;
 }
 main .swiper-button-next {
-    right: -28px;
+    right: 0;
 }
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
     background-color: #000000;
 }
 main {
-    height: calc(100vh - 144px - 100px);
-    min-height: 500px;
+    height: calc(100vh - var(--head-height) - var(--footer-heigth));
+    min-height: 300px;
 }
+
+/*Slider*/
 .image-container {
-    height: calc(100% - 144px);
+    /*height: calc(100% - 144px);*/
 }
 .landscape {
     @apply w-full max-h-full;
@@ -31,4 +42,25 @@ main {
 .slider-container {
     max-height: calc(100% - 68px);
 }
+.slide-image {
+    @apply bg-contain bg-no-repeat bg-center;
+}
+/*Nav*/
+nav ul {
+    @apply max-h-40 overflow-scroll;
+    /*@apply overflow-hidden lg:overflow-auto scrollbar:w-1.5 scrollbar:h-1.5 scrollbar:bg-transparent scrollbar-track:bg-slate-100 scrollbar-thumb:rounded scrollbar-thumb:bg-slate-300 scrollbar-track:rounded dark:scrollbar-track:bg-slate-500/[0.16] dark:scrollbar-thumb:bg-slate-500/50 max-h-96 supports-scrollbars:pr-2 lg:max-h-96;*/
+    direction: rtl;
+}
+nav li {
+    text-align: left;
+}
+nav a,
+nav span {
+    @apply hover:font-bold transition-colors;
+}
 
+
+/*Form*/
+:focus-visible {
+    @apply outline-none rounded-none;
+}

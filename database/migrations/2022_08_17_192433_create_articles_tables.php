@@ -12,7 +12,7 @@ class CreateArticlesTables extends Migration
             // this will create an id, a "published" column, and soft delete and timestamps columns
             createDefaultTableFields($table);
             $table->integer('position')->unsigned()->nullable();
-            $table->integer('year')->nullable();
+            $table->string('year')->nullable();
         });
 
         Schema::create('article_translations', function (Blueprint $table) {

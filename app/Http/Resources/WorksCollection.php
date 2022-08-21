@@ -17,7 +17,7 @@ class WorksCollection extends JsonResource
     {
         return [
             'cover' => $this->resource->image('cover','default'),
-            'date' => Carbon::parse($this->date)->format('Y'),
+            'year' => Carbon::parse($this->date)->format('Y'),
             'title' => $this->title,
             'slug' => $this->resource->slug
         ];

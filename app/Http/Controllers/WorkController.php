@@ -27,7 +27,6 @@ class WorkController extends BaseController
 
     public function view(Work $work)
     {
-//        dd($work);
         return view('site.works.view',compact('work'));
     }
 }
