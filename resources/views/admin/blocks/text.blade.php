@@ -8,10 +8,10 @@
 
 @twillBlockGroup('app')
 
-@formField('checkbox', [
-    'name' => 'three_col',
-    'label' => '3 oszlopba törés'
-])
+{{--@formField('checkbox', [--}}
+{{--    'name' => 'three_col',--}}
+{{--    'label' => '3 oszlopba törés'--}}
+{{--])--}}
 
 @formField('wysiwyg', [
     'name' => 'content',
@@ -19,7 +19,6 @@
     'translated' => true,
     'required' => true,
     'placeholder' => 'Content',
-    'maxlength' => 4000,
     'editSource' => false,
     'toolbarOptions' => [
         ['header' => [2, 3, false]],

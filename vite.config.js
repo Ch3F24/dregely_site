@@ -6,7 +6,7 @@ export default defineConfig({
     plugins: [
         vue(),
         laravel({
-            input: ['resources/js/app.js','resources/js/works_slider.js','resources/js/slider.js'],
+            input: ['resources/js/app.js','resources/js/works_slider.js','resources/js/slider.js','resources/js/admin.js'],
             refresh: true,
         }),
     ],

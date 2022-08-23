@@ -17,8 +17,6 @@ class ArticleController extends Controller
 
     public function index()
     {
-//        $articles = $this->repository->all();
-
         return view('site.articles.index');
     }
 }

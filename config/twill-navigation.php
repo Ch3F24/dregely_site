@@ -1,14 +1,6 @@
 <?php
 
 return [
-    'photos' => [
-        'title' => 'Photos',
-        'module' => true,
-    ],
-    'works' => [
-        'title' => 'Works',
-        'module' => true,
-    ],
     'articles' => [
         'title' => 'Articles',
         'module' => true,
@@ -21,7 +13,38 @@ return [
         'title' => 'Exhibitions',
         'module' => true,
     ],
+    'lexicons' => [
+        'title' => 'Lexicons',
+        'module' => true,
+    ],
+    'installations' => [
+        'title' => 'Installations',
+        'module' => true,
+    ],
+    'videos' => [
+        'title' => 'Videos',
+        'module' => true,
+    ],
 
+
+    'works' => [
+        'title' => 'Works',
+        'route' => 'admin.works.works.index',
+        'primary_navigation' => [
+            'works' => [
+                'title' => 'Works',
+                'module' => true,
+            ],
+            'photos' => [
+                'title' => 'Photos',
+                'module' => true,
+            ],
+            'upload' => [
+                'title' => 'Upload',
+                'route' => 'admin.upload',
+            ],
+        ],
+    ],
 
     'pages' => [
         'title' => 'Pages',
@@ -42,16 +65,16 @@ return [
         'route' => 'admin.settings',
         'params' => ['section' => 'contact'],
         'primary_navigation' => [
-            'contact' => [
-                'title' => 'Contact',
+            'meta' => [
+                'title' => 'Meta',
                 'route' => 'admin.settings',
-                'params' => ['section' => 'contact']
+                'params' => ['section' => 'meta']
             ],
-            'social_media' => [
-                'title' => 'Social media',
-                'route' => 'admin.settings',
-                'params' => ['section' => 'social_media']
-            ],
+//            'social_media' => [
+//                'title' => 'Social media',
+//                'route' => 'admin.settings',
+//                'params' => ['section' => 'social_media']
+//            ],
         ]
     ],
 ];

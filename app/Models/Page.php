@@ -34,6 +34,8 @@ class Page extends Model implements Sortable,LocalizedUrlRoutable
         'title',
     ];
 
+    public $filesParams = ['pdf'];
+
     public $mediasParams = [
         'cover' => [
             'default' => [

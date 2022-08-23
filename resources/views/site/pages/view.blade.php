@@ -1,36 +1,18 @@
 @extends('layouts.app')
+
 @section('meta')
     @include('site.partials._meta',['meta' => $page])
 @endsection
-{{--@if($page->hasImage('header'))--}}
-{{--@section('header')--}}
-{{--    <header>--}}
-{{--        <img src="{{ $page->image('cover','default',['w'=> 1024]) }}"--}}
-{{--             srcset="--}}
-{{--                    {{ $page->image('header','default',['w'=> 1024, 'dpr' => 1]) }} 1x,--}}
-{{--                    {{ $page->image('header','default',['w'=> 1024, 'dpr' => 2]) }} 2x,--}}
-{{--                    {{ $page->image('header','default',['w'=> 1024, 'dpr' => 3]) }} 3x"--}}
-{{--             alt="{{ $page->imageAltText('header') }}"--}}
-{{--             class="w-full">--}}
-{{--    </header>--}}
-{{--@endsection--}}
-{{--@endif--}}
-@section('content')
-    <div class="container relative mt-6">
-        @if($page->sub_title)
-            <h1 class="font-bold text-2xl lg:text-4xl mb-5 md:mb-6 lg:mb-4">{{ $page->sub_title }}</h1>
-        @endif
-        @if($page->description)
-            <div class="lg:text-lg lg:w-8/12">{!! $page->description !!}</div>
-        @endif
-    </div>
-    @if(count($page->blocks))
-        <section class="mb-4">
-            {!! $page->renderBlocks() !!}
-        </section>
-    @endif
-@endsection
 
-@section('assets')
-{{--    <script defer src="{{ mix('js/page.js') }}"></script>--}}
+@section('content')
+    <div class="relative h-full">
+            @if(count($page->blocks))
+                <section class="w-full -ml-8 pl-8 scroll-left mb-4 max-h-full overflow-scroll scrollbar scrollbar-thin scrollbar-thumb-dgrey scrollbar-thumb-rounded scrollbar-track-rounded">
+
+                    <div class="text-left">
+                        {!! $page->renderBlocks() !!}
+                    </div>
+                </section>
+            @endif
+    </div>
 @endsection

@@ -17,6 +17,7 @@ main .swiper-button-next,
 main .swiper-button-prev {
     color: #000000;
     -webkit-text-stroke: 2px white;
+    @apply hidden md:flex
 }
 main .swiper-button-prev {
     left: 0;
@@ -40,14 +41,15 @@ main {
     @apply w-full max-h-full;
 }
 .slider-container {
-    max-height: calc(100% - 68px);
+    /*max-height: calc(100% - 68px);*/
+    max-height: 90%;
 }
 .slide-image {
-    @apply bg-contain bg-no-repeat bg-center;
+    @apply bg-contain bg-no-repeat lg:bg-center;
 }
 /*Nav*/
 nav ul {
-    @apply max-h-40 overflow-scroll;
+    @apply max-h-60 overflow-scroll;
     /*@apply overflow-hidden lg:overflow-auto scrollbar:w-1.5 scrollbar:h-1.5 scrollbar:bg-transparent scrollbar-track:bg-slate-100 scrollbar-thumb:rounded scrollbar-thumb:bg-slate-300 scrollbar-track:rounded dark:scrollbar-track:bg-slate-500/[0.16] dark:scrollbar-thumb:bg-slate-500/50 max-h-96 supports-scrollbars:pr-2 lg:max-h-96;*/
     direction: rtl;
 }
@@ -63,4 +65,7 @@ nav span {
 /*Form*/
 :focus-visible {
     @apply outline-none rounded-none;
+}
+.scroll-left {
+    direction: rtl;
 }

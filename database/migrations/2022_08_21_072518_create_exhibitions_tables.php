@@ -21,12 +21,9 @@ class CreateExhibitionsTables extends Migration
             $table->string('location',255)->nullable();
             $table->string('optional')->nullable();
         });
-
         Schema::create('exhibition_slugs', function (Blueprint $table) {
             createDefaultSlugsTableFields($table, 'exhibition');
         });
-
-
     }
 
     public function down()

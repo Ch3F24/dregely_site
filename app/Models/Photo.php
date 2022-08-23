@@ -21,9 +21,10 @@ class Photo extends Model implements Sortable
         'print',
         'edition_number',
         'size',
-        'date',
+        'year',
         'position',
         'work_id',
+        'reference_number'
     ];
 
     public $translatedAttributes = [

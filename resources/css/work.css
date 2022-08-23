@@ -1,7 +1,17 @@
 .full-w {
-    height: 100% !important;
+    height: 400px !important;
     width: 100% !important;
 }
+@media screen and (min-width: 768px) {
+    .full-w {
+        height: 100% !important;
+    }
+}
+/*@media screen and (min-width: 1024px) {*/
+/*    .full-w {*/
+/*        height: 100% !important;*/
+/*    }*/
+/*}*/
 .swiper-pagination {
     bottom: unset!important;
     top: 50%;

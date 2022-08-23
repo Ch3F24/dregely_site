@@ -18,4 +18,9 @@ class PhotoController extends BaseModuleController
           'works' => app(WorkRepository::class)->listAll(),
         ];
     }
+
+    protected $perPage = 20;
+
+    // Optional, specify the default listing order
+    protected $defaultOrders = ['id' => 'asc'];
 }

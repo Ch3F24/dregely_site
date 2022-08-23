@@ -15,8 +15,9 @@ class CreatePhotosTables extends Migration
             $table->integer('position')->unsigned()->nullable();
             $table->string('edition_number')->nullable();
             $table->string('size')->nullable();
-            $table->date('date')->nullable();
+            $table->string('year')->nullable();
             $table->foreignId('work_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->string('reference_number')->unique()->nullable();
         });
 
         Schema::create('photo_translations', function (Blueprint $table) {

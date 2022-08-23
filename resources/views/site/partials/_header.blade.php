@@ -1,6 +1,6 @@
 <header class="container flex">
     <div class="logo">
-        <a href="/" class=" text-4xl font-bold">Drégely<br>Imre</a>
+        <a href="{{ route('work.index') }}" class=" text-4xl font-bold">Drégely<br>Imre</a>
     </div>
     <div>
         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)

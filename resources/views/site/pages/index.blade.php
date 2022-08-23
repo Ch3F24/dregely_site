@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-{{--@section('meta')--}}
-{{--    @include('site.partials._meta',['meta' => $work])--}}
-{{--@endsection--}}
+@section('meta')
+    @include('site.partials._meta',['title' => $title])
+@endsection
 
 @section('content')
     <div id="app" class="h-full w-full flex flex-col">

@@ -21,7 +21,8 @@ class Work extends Model implements Sortable
         'meta_description',
         'position',
         'parent_work_id',
-        'date'
+        'year',
+        'reference_number'
     ];
 
     public $translatedAttributes = [
@@ -57,6 +58,15 @@ class Work extends Model implements Sortable
     public function getLocalizedRouteKey($locale)
     {
         return $this->getSlug($locale);
+    }
+
+    public function child()
+    {
+        return $this->hasMany(Work::class,'parent_work_id','id');
+    }
+    public function parent()
+    {
+        return $this->hasOne(Work::class,'id','parent_work_id');
     }
 
     public function photos()

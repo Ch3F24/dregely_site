@@ -16,4 +16,7 @@ return [
         'users-2fa' => false,
         'users-oauth' => false,
     ],
+    'block_editor' => [
+        'files' => [ 'pdf' ],
+    ]
 ];

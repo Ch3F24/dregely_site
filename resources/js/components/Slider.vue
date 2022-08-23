@@ -1,25 +1,54 @@
 <template>
-    <div class="relative flex-1 pb-4" :class="{'image-container' : isImage}">
+    <div class="relative flex-1 pb-4 max-h-[90%]" :class="{'image-container' : isImage}">
         <swiper
             @slideChange="onHorizontalSlideChange"
             :modules="modules"
-            :slidesPerView="slidesPerView"
+            :slidesPerView="1"
             :spaceBetween="30"
             :cssMode="true"
             :navigation="{
+                enabled: false,
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             }"
             :pagination="{
                 clickable: true,
-                enabled: dots,
+                enabled: false,
                 type: 'bullets',
                 el: '.swiper-pagination',
             }"
+            :breakpoints="{
+              '768': {
+                slidesPerView: slidesPerView,
+                navigation: {
+                    enabled:true,
+                },
+                pagination: {
+                    enabled: dots
+                }
+              },
+            }"
             :centerInsufficientSlides="true"
             class="work-slider h-full">
-            <swiper-slide class="flex-row h-full" :class="{'full-w' : slidesPerView === 1}" v-for="slide in slides">
-                <div class="w-full h-full slide-image" v-if="slide.photos" :style="{ backgroundImage: 'url(' + slide.photos[0].src + ')' }">
+
+            <swiper-slide v-if="exhibition" class="flex-row h-full full-w" v-for="slide in slides.photos">
+                <div class="w-full h-full slide-image" v-if="isImage && slide.src" :style="{ backgroundImage: 'url(' + slide.src + ')' }">
+                </div>
+            </swiper-slide>
+
+            <swiper-slide v-else-if="isVideo" class="flex-row h-full full-w" v-for="slide in slides.photos">
+                <div class="w-full h-full slide-image">
+                    <video controls class="h-full mx-auto" v-if="slide.substr(slide.length - 3) === 'mp4'">
+                        <source :src="slide" type="video/mp4">
+                    </video>
+                    <img :src="slide" class="h-full mx-auto" alt="">
+                </div>
+
+<!--                <div class="w-full h-full slide-image" v-if="isImage && slide.src" :style="{ backgroundImage: 'url(' + slide.src + ')' }">-->
+<!--                </div>-->
+            </swiper-slide>
+            <swiper-slide v-else class="flex-row h-full" :class="{'full-w' : slidesPerView === 1}" v-for="slide in slides">
+                <div class="w-full h-full slide-image" v-if="isImage && slide.photos" :style="{ backgroundImage: 'url(' + slide.photos[0].src + ')' }">
 <!--                    <img loading="lazy" :src="slide.photos[0].src" alt="first"-->
 <!--                         class="object-contain max-h-full my-auto"/>-->
                 </div>
@@ -31,7 +60,7 @@
                     <p v-if="slide.description">{{ slide.description }}</p>
                     <div v-if="slide.pdf">
                         <a :href="slide.pdf" download class="group">
-<!--                            <img src="/assets/images/download.svg" width="40" alt="Download icon" class="inline-block">-->
+                            <img :src="icon" width="40" alt="Download icon" class="inline-block">
                             <span class="ml-4 group-hover:font-bold">Cikk letöltése</span>
                         </a>
                     </div>
@@ -40,8 +69,8 @@
             </swiper-slide>
         </swiper>
     </div>
-    <div class="relative flex items-center min-h-[20%] px-12">
-        <div class="w-1/3 flex space-x-4 h-full items-center">
+    <div class="relative md:flex items-center min-h-[10%] md:px-12">
+        <div class="md:w-1/3 flex space-x-4 h-full items-center">
             <div class="w-1/3 z-50 cursor-pointer" v-if="withThumb && activeSlide.photos && activeSlide.photos.length > 1"
                  v-for="(thumb,key) in activeSlide.photos"
                  @click="selectThumbnail(key)">
@@ -49,11 +78,11 @@
 <!--                <img loading="lazy" :src="thumb['src']" alt="first" class="w-[100px] h-[100px] object-cover">-->
             </div>
         </div>
-        <div class="w-1/3 h-full">
+        <div class="md:w-1/3 h-full">
             <div class="swiper-pagination"></div>
         </div>
-        <div class="w-1/3">
-            <div v-if="activeSlide">
+        <div class="md:w-1/3 mt-4 md:mt-0">
+            <div v-if="activeSlide && isImage">
                 <p>
                     <span class="font-bold" v-if="activeSlide.title">{{ activeSlide.title }}</span>
                     <span v-if="activeSlide.year">, {{ activeSlide.year }}</span>
@@ -100,6 +129,12 @@ export default {
         },
         dots: {
             default: false
+        },
+        exhibition: {
+            default: false
+        },
+        isVideo: {
+            default: false
         }
     },
     data() {
@@ -107,7 +142,8 @@ export default {
             slides: [],
             modules: [Pagination, Navigation],
             currentIndex: 0,
-            activeSlide: []
+            activeSlide: [],
+            icon: '/assets/images/download.svg'
         }
     },
     components: {Swiper, SwiperSlide},
@@ -120,7 +156,11 @@ export default {
             Axios.get(this.route).then(e => {
                 this.slides = e.data.data
                 if (e.data.data) {
-                    this.activeSlide = e.data.data[0]
+                    if (this.exhibition) {
+                        this.activeSlide = e.data.data
+                    } else {
+                        this.activeSlide = e.data.data[0]
+                    }
                 }
             }).catch(e => {
                 console.log(e)
@@ -134,16 +174,14 @@ export default {
             return image.src + '&' + queryString;
         },
         onHorizontalSlideChange(swiper) {
-            this.currentIndex = swiper.activeIndex
-            this.activeSlide = this.slides[swiper.activeIndex]
+            if (!this.exhibition) {
+                this.currentIndex = swiper.activeIndex
+                this.activeSlide = this.slides[swiper.activeIndex]
+            }
         },
         selectThumbnail(key) {
             const activeSlide = document.querySelector('.swiper-slide-active').children[0]
             activeSlide.style.backgroundImage = `url('${this.activeSlide.photos[key].src}')`
-            // console.log(activeSlide)
-            // activeSlide =
-
-            // this.activePhoto.photos[0].src = this.activePhoto.photos[key].src
         }
     }
 

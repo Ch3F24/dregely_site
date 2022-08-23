@@ -7,7 +7,7 @@
         'title' => 'Default', // title to display in the Editor dropdown selector
         'blocks' => [
             'text',
-            'social_link'
+            'file'
         ],
     ])
 @section('sideFieldset')

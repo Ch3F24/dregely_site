@@ -6,11 +6,18 @@
         'label' => 'Sorozat',
         'options' => $works
     ])
-    @formField('date_picker', [
-        'name' => 'date',
-        'label' => 'Date',
-        'altFormat' => 'Y',
-        'withTime' => false
+
+    @formField('input', [
+        'name' => 'reference_number',
+        'label' => 'Referencia szám',
+        'maxlength' => 2,
+        'required' => true,
+    ])
+
+    @formField('input', [
+        'name' => 'year',
+        'label' => 'Év',
+        'maxlength' => 15
     ])
     @formField('input', [
         'name' => 'edition_number',

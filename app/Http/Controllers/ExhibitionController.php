@@ -16,18 +16,19 @@ class ExhibitionController extends Controller
             'data' => $exhibition,
             'route' => route('api.exhibition.view',$exhibition->id),
             'thumb' => 0,
-            'isImage' => true
+            'isExhibition' => true,
+            'slides' => 1,
+            'isImage' => 1,
+            'dots' => true,
+            'isVideo' => 0
+
         ]);
     }
 
     public function photos(Request $request)
     {
-        $exhibition = collect();
-        $exhibition->push(Exhibition::query()->findOrFail($request->id));
+        $exhibition = Exhibition::query()->findOrFail($request->id);
 
-//        dd($exhibition);
-//        $exhibition = Exhibition::query()->findOrFail($request->id);
-//        return ExhibitionsCollection::collection($exhibition);
-        return ExhibitionsResource::collection($exhibition);
+        return new ExhibitionsResource($exhibition);
     }
 }

@@ -8,6 +8,19 @@
         'maxlength' => 100
     ])
 
+    @formField('input', [
+        'name' => 'reference_number',
+        'label' => 'Referencia szám',
+        'maxlength' => 2,
+        'required' => true,
+    ])
+
+    @formField('input', [
+        'name' => 'year',
+        'label' => 'Év',
+        'maxlength' => 15
+    ])
+
     @formField('select', [
     'name' => 'parent_work_id',
     'label' => 'Parent',
@@ -16,12 +29,6 @@
     @formField('medias', [
         'name' => 'cover',
         'label' => 'Borító',
-    ])
-    @formField('date_picker', [
-    'name' => 'date',
-    'label' => 'Date',
-    'altFormat' => 'Y',
-    'withTime' => false
     ])
 
     @section('sideFieldset')

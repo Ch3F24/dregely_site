@@ -3,23 +3,30 @@
         <swiper
             :cssMode=true
             :modules="modules"
-            :slidesPerView="4"
+            :slidesPerView="1"
             :spaceBetween="30"
             :navigation="{
+                enabled:true,
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             }"
-            :grid="{
-                rows: 2
-            }"
             :pagination="{
+                clickable: true,
                 enabled: true,
                 type: 'bullets',
                 el: '.swiper-pagination',
             }"
+            :breakpoints="{
+              '768': {
+                slidesPerView: 4,
+                grid: {
+                    rows: 2
+                },
+              },
+            }"
             class="work-slider h-full w-full">
-            <swiper-slide class="flex-row h-full w-full" v-for="slide in slides">
-                <a :href="lang + '/works/' + slide.slug" class="w-full h-full z-10 swiper-no-swiping  flex flex-col" :title="slide.title">
+            <swiper-slide class="flex-row h-80 lg:h-full w-full" v-for="slide in slides">
+                <a :href="lang + '/work/' + slide.slug" class="w-full h-full z-10 swiper-no-swiping  flex flex-col" :title="slide.title">
                     <div class="w-full flex-1 overflow-hidden">
                         <div class="h-full w-full bg-cover bg-no-repeat bg-center hover:scale-110 transition-transform	" :style="{ backgroundImage: 'url(' + slide.cover + ')' }"></div>
                     </div>
@@ -30,7 +37,7 @@
         </swiper>
     </div>
 
-    <div class="relative min-h-[20%]" v-if="slides">
+    <div class="relative h-14 min-h-[10%]" v-if="slides">
         <div class="swiper-pagination"></div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -40,7 +47,6 @@
 <script>
 import Axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-
 import {Pagination,Navigation, Grid} from 'swiper';
 import "swiper/css";
 import "swiper/css/pagination";
@@ -69,7 +75,7 @@ export default {
     },
     methods: {
         loadSlides() {
-            Axios.get('/api/works').then(e => {
+            Axios.get('/api/work').then(e => {
                 this.slides = e.data.data
                 this.activeSlide = e.data.data[0]
             }).catch(e => {

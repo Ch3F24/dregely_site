@@ -4,8 +4,11 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Contact;
+use App\Models\Lexicon;
 use App\Repositories\ContactRepository;
 use Database\Factories\AdminFactory;
+use Database\Factories\LexiconFactory;
+use Database\Factories\WorkFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -26,18 +29,19 @@ class DatabaseSeeder extends Seeder
         app(ContactRepository::class)->create([
             'title' => [
                 'en' => 'Contact',
-                '' => 'Kapcsolat'
-                // add other languages here
+                'hu' => 'Kapcsolat'
             ],
-            'description' => [
+            'contact_information' => [
                 'en' => '',
                 'hu' => ''
-                // add other languages here
             ],
             'published' => false,
         ]);
 
         // \App\Models\User::factory(10)->create();
+//            Lexicon::factory(10)->create();
+            LexiconFactory::new()->count(10)->create();
+            WorkFactory::new()->count(15)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

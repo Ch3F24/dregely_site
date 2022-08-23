@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    <div id="app" class="h-full w-full"></div>
+    <div id="app" class="h-full w-full flex flex-col"></div>
     {{--    <div class="container p-0 relative flex-1 slider-container">--}}
 {{--        <div class="swiper mySwiper swiper-grid-column">--}}
 {{--            <div class="swiper-wrapper">--}}
