@@ -26,12 +26,12 @@
             }"
             class="work-slider h-full w-full">
             <swiper-slide class="flex-row h-80 lg:h-full w-full" v-for="slide in slides">
-                <a :href="lang + '/work/' + slide.slug" class="w-full h-full z-10 swiper-no-swiping  flex flex-col" :title="slide.title">
+                <a :href="lang + '/work/' + slide.slug" class="w-full h-full z-10 swiper-no-swiping flex flex-col" :title="slide.title">
                     <div class="w-full flex-1 overflow-hidden">
                         <div class="h-full w-full bg-cover bg-no-repeat bg-center hover:scale-110 transition-transform	" :style="{ backgroundImage: 'url(' + slide.cover + ')' }"></div>
                     </div>
 <!--                    <img loading="lazy" :src="slide.cover" alt="first" class="object-cover max-h-[85%] my-auto w-full" :title="slide.title" />-->
-                    <p>{{ slide.title }} - {{ slide.year }}</p>
+                    <p class="text-left mt-4">{{ slide.title }} - {{ slide.year }}</p>
                 </a>
             </swiper-slide>
         </swiper>

@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Campton';
+    src: url('../../public/fonts/CamptonBook.otf'); /* IE9 Compat Modes */
+    src: url('../../public/fonts/CamptonBook.otf') format('opentype');
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Campton';
+    src: url('../../public/fonts/CamptonMedium.otf'); /* IE9 Compat Modes */
+    src: url('../../public/fonts/CamptonMedium.otf') format('opentype');
+    font-style: normal;
+    font-weight: 500;
+}
+
 :root {
     --head-height: 176px;
     --footer-heigth: 50px;
@@ -58,7 +73,7 @@ nav li {
 }
 nav a,
 nav span {
-    @apply hover:font-bold transition-colors;
+    @apply hover:font-medium transition-colors;
 }
 
 

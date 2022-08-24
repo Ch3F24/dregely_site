@@ -1,13 +1,7 @@
 import './bootstrap';
 import '../css/app.css';
+// document.addEventListener('contextmenu', event => event.preventDefault());
 
-// let headerHeight = document.querySelector('header').offsetHeight;
-// let footerHeight = document.querySelector('footer').offsetHeight;
-// let main = document.querySelector('main');
-// console.log(headerHeight)
-// document.documentElement.style.setProperty('--header-height', headerHeight + 'px');
-// document.documentElement.style.setProperty('--footer-height', footerHeight + 'px');
-// document.querySelector('main').style.height = (document.documentElement.offsetHeight - headerHeight - footerHeight) + 'px';
 const mediaQuery = window.matchMedia('(min-width: 768px)')
 const main = document.querySelector('main');
 
@@ -25,7 +19,5 @@ function setMainHeight() {
 setMainHeight();
 
 addEventListener('resize', setMainHeight);
-
-// document.documentElement.addEventListener('resize',setMainHeight);
 
 
