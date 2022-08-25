@@ -1,0 +1,62 @@
+{
+  "resources/js/app.js": {
+    "file": "assets/app.f51a68df.js",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_index.1f50102a.js"
+    ],
+    "css": [
+      "assets/app.205344d1.css"
+    ]
+  },
+  "resources/js/works_slider.js": {
+    "file": "assets/works_slider.dd45e3d1.js",
+    "src": "resources/js/works_slider.js",
+    "isEntry": true,
+    "imports": [
+      "__plugin-vue_export-helper.2df5e06b.js",
+      "_index.1f50102a.js"
+    ],
+    "css": [
+      "assets/works_slider.40d96f8b.css"
+    ]
+  },
+  "resources/js/slider.js": {
+    "file": "assets/slider.bee92274.js",
+    "src": "resources/js/slider.js",
+    "isEntry": true,
+    "imports": [
+      "__plugin-vue_export-helper.2df5e06b.js",
+      "_index.1f50102a.js"
+    ],
+    "css": [
+      "assets/slider.6ceaa66c.css"
+    ]
+  },
+  "_index.1f50102a.js": {
+    "file": "assets/index.1f50102a.js"
+  },
+  "__plugin-vue_export-helper.2df5e06b.js": {
+    "file": "assets/_plugin-vue_export-helper.2df5e06b.js",
+    "css": [
+      "assets/_plugin-vue_export-helper.7b1f8205.css"
+    ]
+  },
+  "resources/js/works_slider.css": {
+    "file": "assets/works_slider.40d96f8b.css",
+    "src": "resources/js/works_slider.css"
+  },
+  "resources/js/slider.css": {
+    "file": "assets/slider.6ceaa66c.css",
+    "src": "resources/js/slider.css"
+  },
+  "_plugin-vue_export-helper.css": {
+    "file": "assets/_plugin-vue_export-helper.7b1f8205.css",
+    "src": "_plugin-vue_export-helper.css"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app.205344d1.css",
+    "src": "resources/js/app.css"
+  }
+}
