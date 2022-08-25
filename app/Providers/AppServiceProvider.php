@@ -37,6 +37,8 @@ class AppServiceProvider extends ServiceProvider
         $pages = [];
         $installations = [];
         $videos = [];
+        $site_keywords = '';
+        $site_description = '';
 
         if (Schema::hasTable('works')) {
             $works = Cache::remember('works',CarbonInterval::week(),function () {
@@ -67,8 +69,10 @@ class AppServiceProvider extends ServiceProvider
                 return app(VideoRepository::class)->all()->where('published');
             });
         }
-        $site_keywords = app(SettingRepository::class)->byKey('keywords');
-        $site_description = app(SettingRepository::class)->byKey('meta_description');
+        if (Schema::hasTable('videos')) {
+            $site_keywords = app(SettingRepository::class)->byKey('keywords');
+            $site_description = app(SettingRepository::class)->byKey('meta_description');
+        }
 
 
         view()->share([
