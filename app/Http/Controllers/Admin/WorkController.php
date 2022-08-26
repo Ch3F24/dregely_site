@@ -18,4 +18,15 @@ class WorkController extends BaseModuleController
           'works' => app(WorkRepository::class)->listAll('title',[],$request->route('work'))
         ];
     }
+
+    protected $indexColumns = [
+        'title' => [
+            'title' => 'Title',
+            'field' => 'title',
+        ],
+        'reference_number' => [
+            'title' => 'Referenciaszám',
+            'field' => 'reference_number',
+        ],
+    ];
 }

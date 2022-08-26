@@ -10,7 +10,7 @@
     @formField('input', [
         'name' => 'reference_number',
         'label' => 'Referencia szám',
-        'maxlength' => 2,
+        'maxlength' => 4,
         'required' => true,
     ])
 

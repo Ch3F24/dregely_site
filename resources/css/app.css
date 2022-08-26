@@ -69,13 +69,13 @@ nav ul {
     direction: rtl;
 }
 nav li {
+    direction: ltr;
     text-align: left;
 }
 nav a,
 nav span {
     @apply hover:font-medium transition-colors;
 }
-
 
 /*Form*/
 :focus-visible {

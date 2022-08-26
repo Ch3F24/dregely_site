@@ -76,7 +76,7 @@ class AppServiceProvider extends ServiceProvider
 
 
         view()->share([
-            'works' => $works,
+            'works_menu' => $works,
             'pages' => $pages,
             'exhibitions' => $exhibitions,
             'installations' => $installations,

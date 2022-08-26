@@ -68,4 +68,9 @@ class Photo extends Model implements Sortable
 
         return [];
     }
+
+    public function work()
+    {
+        return $this->belongsTo(Work::class);
+    }
 }

@@ -37,10 +37,16 @@ class PageController extends BaseController
 
     public function publications()
     {
-        return view('site.pages.index')
+        return view('site.pages.slider')
             ->with([
                 'route' => route('api.publication.index'),
-                'title' => __('Publications')
+                'title' => __('Publications'),
+                'slides' => 3,
+                'dots' => true,
+                'thumb' => 0,
+                'isImage' => 0,
+                'isExhibition' => 0,
+                'isVideo' => 0
             ]);
     }
 

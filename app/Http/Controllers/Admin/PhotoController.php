@@ -19,8 +19,36 @@ class PhotoController extends BaseModuleController
         ];
     }
 
-    protected $perPage = 20;
+    protected $perPage = 10;
 
     // Optional, specify the default listing order
     protected $defaultOrders = ['id' => 'asc'];
+
+    protected $indexColumns = [
+        'photos' => [
+            'thumb' => true, // image column
+            'variant' => [
+                'role' => 'photos',
+                'crop' => 'default',
+            ],
+        ],
+        'id' => [
+            'title' => 'id',
+            'field' => 'id',
+        ],
+        'title' => [
+            'title' => 'Title',
+            'field' => 'title',
+        ],
+        'reference_number' => [
+            'title' => 'Referenciaszám',
+            'field' => 'reference_number',
+        ],
+        'work' => [
+            'title' => 'works',
+            'sort' => true,
+            'relationship' => 'work',
+            'field' => 'title'
+        ],
+    ];
 }

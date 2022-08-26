@@ -1,94 +1,106 @@
 {
+  "public/fonts/CamptonBook.otf": {
+    "file": "assets/CamptonBook.fa43203c.otf",
+    "src": "public/fonts/CamptonBook.otf"
+  },
+  "public/fonts/CamptonMedium.otf": {
+    "file": "assets/CamptonMedium.c0246a50.otf",
+    "src": "public/fonts/CamptonMedium.otf"
+  },
   "resources/js/app.js": {
-    "file": "assets/app.e90cb789.js",
+    "file": "assets/app.dea79288.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
       "_index.83bc9570.js"
     ],
     "css": [
-      "assets/app.9c7ff60f.css"
+      "assets/app.fdacfb10.css"
+    ],
+    "assets": [
+      "assets/CamptonBook.fa43203c.otf",
+      "assets/CamptonMedium.c0246a50.otf"
     ]
   },
   "resources/js/works_slider.js": {
-    "file": "assets/works_slider.b5ebdeb6.js",
+    "file": "assets/works_slider.1618b627.js",
     "src": "resources/js/works_slider.js",
     "isEntry": true,
     "imports": [
-      "__plugin-vue_export-helper.5bd245c3.js",
+      "__plugin-vue_export-helper.d7009684.js",
       "_index.83bc9570.js",
-      "_navigation.min.6397b471.js"
+      "_navigation.min.38df2bf9.js"
     ],
     "css": [
-      "assets/works_slider.20e5668a.css"
+      "assets/works_slider.b74d03b4.css"
     ]
   },
   "resources/js/slider.js": {
-    "file": "assets/slider.ac6da7a6.js",
+    "file": "assets/slider.a6ecde06.js",
     "src": "resources/js/slider.js",
     "isEntry": true,
     "imports": [
-      "_vue.esm-bundler.88f29b14.js",
+      "_vue.esm-bundler.e0398ebd.js",
       "_index.83bc9570.js",
-      "_navigation.min.6397b471.js",
-      "__plugin-vue_export-helper.5bd245c3.js"
+      "__plugin-vue_export-helper.d7009684.js",
+      "_navigation.min.38df2bf9.js"
     ],
     "css": [
-      "assets/slider.44420388.css"
+      "assets/slider.2f3589b1.css"
     ]
   },
   "resources/js/admin.js": {
-    "file": "assets/admin.f8c2fd1b.js",
+    "file": "assets/admin.e500ee2a.js",
     "src": "resources/js/admin.js",
     "isEntry": true,
     "imports": [
-      "_vue.esm-bundler.88f29b14.js",
+      "_vue.esm-bundler.e0398ebd.js",
       "_index.83bc9570.js",
-      "__plugin-vue_export-helper.5bd245c3.js"
+      "__plugin-vue_export-helper.d7009684.js"
     ],
     "css": [
-      "assets/admin.80a5e2bc.css"
+      "assets/admin.a95347c2.css"
     ]
   },
   "_index.83bc9570.js": {
     "file": "assets/index.83bc9570.js"
   },
-  "__plugin-vue_export-helper.5bd245c3.js": {
-    "file": "assets/_plugin-vue_export-helper.5bd245c3.js"
+  "__plugin-vue_export-helper.d7009684.js": {
+    "file": "assets/_plugin-vue_export-helper.d7009684.js"
   },
-  "_navigation.min.6397b471.js": {
-    "file": "assets/navigation.min.6397b471.js",
+  "_navigation.min.38df2bf9.js": {
+    "file": "assets/navigation.min.38df2bf9.js",
     "imports": [
-      "__plugin-vue_export-helper.5bd245c3.js"
+      "__plugin-vue_export-helper.d7009684.js"
     ],
     "css": [
       "assets/navigation.7b1f8205.css"
     ]
   },
-  "_vue.esm-bundler.88f29b14.js": {
-    "file": "assets/vue.esm-bundler.88f29b14.js",
+  "_vue.esm-bundler.e0398ebd.js": {
+    "file": "assets/vue.esm-bundler.e0398ebd.js",
     "imports": [
-      "__plugin-vue_export-helper.5bd245c3.js"
+      "__plugin-vue_export-helper.d7009684.js"
     ]
   },
   "resources/js/slider.css": {
-    "file": "assets/slider.44420388.css",
+    "file": "assets/slider.2f3589b1.css",
     "src": "resources/js/slider.css"
   },
   "resources/js/works_slider.css": {
-    "file": "assets/works_slider.20e5668a.css",
+    "file": "assets/works_slider.b74d03b4.css",
     "src": "resources/js/works_slider.css"
-  },
-  "resources/js/app.css": {
-    "file": "assets/app.9c7ff60f.css",
-    "src": "resources/js/app.css"
   },
   "navigation.css": {
     "file": "assets/navigation.7b1f8205.css",
     "src": "navigation.css"
   },
+  "resources/js/app.css": {
+    "file": "assets/app.fdacfb10.css",
+    "src": "resources/js/app.css"
+  },
   "resources/js/admin.css": {
-    "file": "assets/admin.80a5e2bc.css",
+    "file": "assets/admin.a95347c2.css",
     "src": "resources/js/admin.css"
   }
 }
