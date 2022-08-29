@@ -59,7 +59,7 @@ class AppServiceProvider extends ServiceProvider
         }
 
         if (Schema::hasTable('installations')) {
-            $exhibitions = Cache::remember('installation',CarbonInterval::week(),function () {
+            $installations = Cache::remember('installation',CarbonInterval::week(),function () {
                 return app(InstallationRepository::class)->all()->where('published');
             });
         }
@@ -73,7 +73,6 @@ class AppServiceProvider extends ServiceProvider
             $site_keywords = app(SettingRepository::class)->byKey('keywords');
             $site_description = app(SettingRepository::class)->byKey('meta_description');
         }
-
 
         view()->share([
             'works_menu' => $works,

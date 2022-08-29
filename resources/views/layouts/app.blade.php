@@ -49,8 +49,7 @@
     </main>
     <footer class="container pb-4 pt-12">
         <div class="w-full lg:w-9/12 ml-auto md:pl-4">
-            <p>&copy; Imre Drégely:</p>
-            <p>All rights reserved</p>
+            <p>&copy; Imre Drégely: All rights reserved</p>
         </div>
     </footer>
 

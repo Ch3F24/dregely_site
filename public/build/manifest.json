@@ -15,7 +15,7 @@
       "_index.83bc9570.js"
     ],
     "css": [
-      "assets/app.fdacfb10.css"
+      "assets/app.61f603ab.css"
     ],
     "assets": [
       "assets/CamptonBook.fa43203c.otf",
@@ -36,7 +36,7 @@
     ]
   },
   "resources/js/slider.js": {
-    "file": "assets/slider.a6ecde06.js",
+    "file": "assets/slider.f5f116e9.js",
     "src": "resources/js/slider.js",
     "isEntry": true,
     "imports": [
@@ -91,16 +91,16 @@
     "file": "assets/works_slider.b74d03b4.css",
     "src": "resources/js/works_slider.css"
   },
+  "resources/js/admin.css": {
+    "file": "assets/admin.a95347c2.css",
+    "src": "resources/js/admin.css"
+  },
   "navigation.css": {
     "file": "assets/navigation.7b1f8205.css",
     "src": "navigation.css"
   },
   "resources/js/app.css": {
-    "file": "assets/app.fdacfb10.css",
+    "file": "assets/app.61f603ab.css",
     "src": "resources/js/app.css"
-  },
-  "resources/js/admin.css": {
-    "file": "assets/admin.a95347c2.css",
-    "src": "resources/js/admin.css"
   }
 }

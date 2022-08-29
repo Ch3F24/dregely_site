@@ -17,7 +17,7 @@ class PhotoController extends Controller
     public function index(Request $request)
     {
         $work = Work::query()->findOrFail($request->id);
-        return PhotoCollection::collection($work->photos);
+        return PhotoCollection::collection($work->photos->sortBy('reference_number'));
 //        $photos = $work->photos;
 //        return $photos;
     }

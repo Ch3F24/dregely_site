@@ -76,7 +76,7 @@
 <!--                <img loading="lazy" :src="thumb['src']" alt="first" class="w-[100px] h-[100px] object-cover">-->
             </div>
         </div>
-        <div class="md:w-1/3 h-full">
+        <div class="md:w-1/3 h-full" v-if="dots">
             <div class="swiper-pagination"></div>
         </div>
         <div class="md:w-1/3 mt-4 md:mt-0">
