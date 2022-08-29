@@ -18,7 +18,7 @@
 
     @include('site.partials._nav_dropdown',[
         'part' => 'video',
-        'title' => __('Video'),
+        'title' => __('Video - Animation'),
         'links' => $videos
     ])
 
@@ -70,7 +70,7 @@
 {{--    @endforeach--}}
     @include('site.partials._nav_dropdown',[
         'part' => 'exhibition',
-        'title' => __('Exhibition'),
+        'title' => __('Exhibitions'),
         'links' => $exhibitions
     ])
 {{--    <div x-data="{ open: false }" x-init="open = {{ request()->is(app()->getLocale() . '/exhibitions*') ? 'true' : 'false' }}">--}}

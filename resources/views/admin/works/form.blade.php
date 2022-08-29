@@ -25,6 +25,7 @@
     'name' => 'parent_work_id',
     'label' => 'Parent',
     'options' => $works,
+    'searchable' => true
     ])
     @formField('medias', [
         'name' => 'cover',
