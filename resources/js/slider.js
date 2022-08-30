@@ -1,8 +1,13 @@
 import { createApp } from 'vue/dist/vue.esm-bundler';
 import Slider from './components/Slider.vue'
+// in this path vue-easy-lightbox/dist/external-css/*.js
+import VueEasyLightbox from 'vue-easy-lightbox'
 
+// you need to import css yourself
+// import 'vue-easy-lightbox/external-css/vue-easy-lightbox.css'
 // const app = createApp(Slider)
 const app = createApp({})
+app.use(VueEasyLightbox)
 app.component('slider',Slider)
 app.mount('#app');
 

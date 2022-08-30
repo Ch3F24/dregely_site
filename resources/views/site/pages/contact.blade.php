@@ -6,13 +6,13 @@
 
 @section('content')
     @if(Session::has('status'))
-        <div class=" my-4 py-2 px-6 bg-dgrey font-bold text-white border border-dgrey">
+        <div class=" my-4 py-2 px-6 bg-dgrey font-medium text-white border border-dgrey">
             {{session('status')}}
         </div>
     @endif
     <div class="md:flex w-full">
         <div class="w-full md:w-10/12 lg:w-8/12">
-            <h1 class="font-bold">{{ $page->title }}</h1>
+            <h1 class="font-medium">{{ $page->title }}</h1>
 
             <form action="{{ route('page.contact.send') }}" method="post" class="flex flex-wrap mt-16">
                 @csrf

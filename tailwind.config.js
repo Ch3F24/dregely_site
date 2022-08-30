@@ -13,7 +13,10 @@ module.exports = {
             },
             colors: {
               'dgrey': '#464646',
-            }
+            },
+            fontFamily: {
+                sans: ['Campton','sans-serif'],
+            },
         },
         container: {
           center: true,

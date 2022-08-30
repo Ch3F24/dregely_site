@@ -32,25 +32,24 @@
 {{--    @include('front.partials._svg_links')--}}
 
 </head>
-<body class="h-screen relative">
+<body class="h-screen relative flex flex-col md:block">
 {{--<body class="relative h-full">--}}
     @include('site.partials._header')
 
 {{--    <div id="app" class="flex-1">--}}
 {{--        @yield('header')--}}
 
-    <main class="container md:flex md:gap-x-4 py-4 @if(isset($autoHeight)) h-auto min-h-auto @endif">
-        <div class="md:w-3/12 overflow-hidden h-full">
+    <main class="container flex-1 md:flex-auto md:flex md:gap-x-4 py-4 @if(isset($autoHeight)) h-auto min-h-auto @endif">
+        <div class="md:w-3/12 overflow-hidden h-full hidden lg:block">
             @include('site.partials._nav')
         </div>
-        <div class=" mt-12 md:mt-0 md:w-9/12 relative flex flex-col items-start">
+        <div class=" mt-12 md:mt-0 w-full lg:w-9/12 relative flex flex-col items-start">
             @yield('content')
         </div>
     </main>
     <footer class="container pb-4 pt-12">
-        <div class="md:w-9/12 ml-auto md:pl-4">
-            <p>&copy; Imre Drégely:</p>
-            <p>All rights reserved</p>
+        <div class="w-full lg:w-9/12 ml-auto md:pl-4">
+            <p>&copy; Imre Drégely: All rights reserved</p>
         </div>
     </footer>
 

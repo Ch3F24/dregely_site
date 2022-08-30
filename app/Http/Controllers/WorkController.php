@@ -23,9 +23,7 @@ class WorkController extends BaseController
 
     public function index()
     {
-        $works = $this->repository->all();
-
-        return view('site.works.index',compact('works'));
+        return view('site.works.index');
     }
 
     public function view(Work $work)

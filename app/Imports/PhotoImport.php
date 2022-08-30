@@ -13,7 +13,7 @@ use Maatwebsite\Excel\Concerns\WithStartRow;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithValidation;
 
-class PhotoImport implements ToModel, WithStartRow,SkipsEmptyRows,WithLimit,WithValidation
+class PhotoImport implements ToModel, WithStartRow,WithLimit
 //    ,WithColumnLimit
 {
     use RemembersRowNumber;
@@ -41,9 +41,9 @@ class PhotoImport implements ToModel, WithStartRow,SkipsEmptyRows,WithLimit,With
      */
     public function model(array $row)
     {
+        Log::error($this->getRowNumber());
         $work = Work::query()->where('reference_number', substr($row[1], 0, 2))->first();
         $photo = Photo::query()->where('reference_number', $row[1])->first();
-
         if ($photo) {
             //Hu
             $photo->translate('hu')->title = $row[2];

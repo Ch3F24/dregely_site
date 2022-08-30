@@ -21,4 +21,15 @@ class WorkController extends BaseModuleController
           'works' => $works
         ];
     }
+
+    protected $indexColumns = [
+        'title' => [
+            'title' => 'Title',
+            'field' => 'title',
+        ],
+        'reference_number' => [
+            'title' => 'Referenciaszám',
+            'field' => 'reference_number',
+        ],
+    ];
 }

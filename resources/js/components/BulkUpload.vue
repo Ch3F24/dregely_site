@@ -38,8 +38,8 @@ export default {
     data() {
         return {
             form: {
-                row_start: 2,
-                row_limit: 0,
+                row_start: 1,
+                row_limit: 1,
                 file: ''
             },
             errors: [],
@@ -51,7 +51,13 @@ export default {
             this.errors = [];
             if (!this.form.file) {
                 alert('Nincs file kiválasztva')
+            } else if(this.form.row_start < 1 || this.form.row_limit < 1) {
+                alert('Nem megfelelőek a feltölteni kívánt sorok száma.')
+
+            } else if(this.form.file.type !== 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') {
+                alert('Csak xslx file formátum tölthető fel')
             } else {
+
                 this.loading = true;
                 const formData = new FormData();
 
@@ -60,7 +66,7 @@ export default {
                 formData.append('file', this.form.file);
 
                 axios.post('/api/admin/bulk-update',formData).then((response) => {
-                    if (response === 'success')
+                    if (response.data === 'success')
                     {
                         alert('Feltöltve')
                     } else {
@@ -75,7 +81,7 @@ export default {
             }
         },
         handleFileUpload() {
-            // debugger;
+            this.form.file = '';
             this.form.file = file.files[0]
             console.log("selected file",file.files[0])
             //Upload to server

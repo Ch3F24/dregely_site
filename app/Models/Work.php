@@ -71,6 +71,6 @@ class Work extends Model implements Sortable
 
     public function photos()
     {
-        return $this->hasMany(Photo::class);
+        return $this->hasMany(Photo::class)->where('published',1);
     }
 }

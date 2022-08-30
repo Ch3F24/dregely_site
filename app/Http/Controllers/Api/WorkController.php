@@ -22,7 +22,7 @@ class WorkController extends Controller
      */
     public function index()
     {
-        return WorksCollection::collection($this->repository->all());
+        return WorksCollection::collection($this->repository->all()->where('published'));
     }
 
     /**

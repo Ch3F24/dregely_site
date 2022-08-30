@@ -22,9 +22,10 @@
     ])
 
     @formField('select', [
-    'name' => 'parent_work_id',
-    'label' => 'Parent',
-    'options' => $works,
+        'name' => 'parent_work_id',
+        'label' => 'Parent',
+        'options' => $works,
+        'searchable' => true
     ])
     @formField('medias', [
         'name' => 'cover',
