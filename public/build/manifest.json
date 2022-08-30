@@ -79,16 +79,16 @@
     "file": "assets/works_slider.20e5668a.css",
     "src": "resources/js/works_slider.css"
   },
-  "resources/js/app.css": {
-    "file": "assets/app.9c7ff60f.css",
-    "src": "resources/js/app.css"
+  "resources/js/admin.css": {
+    "file": "assets/admin.80a5e2bc.css",
+    "src": "resources/js/admin.css"
   },
   "navigation.css": {
     "file": "assets/navigation.7b1f8205.css",
     "src": "navigation.css"
   },
-  "resources/js/admin.css": {
-    "file": "assets/admin.80a5e2bc.css",
-    "src": "resources/js/admin.css"
+  "resources/js/app.css": {
+    "file": "assets/app.9c7ff60f.css",
+    "src": "resources/js/app.css"
   }
 }

@@ -14,8 +14,11 @@ class WorkController extends BaseModuleController
 
     protected function formData($request)
     {
+        $works = app(WorkRepository::class)->listAll('title',[],$request->route('work'));
+        $works->prepend('Kérem válasszon');
+
         return [
-          'works' => app(WorkRepository::class)->listAll('title',[],$request->route('work'))
+          'works' => $works
         ];
     }
 }
