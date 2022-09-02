@@ -15,7 +15,7 @@
       "_index.83bc9570.js"
     ],
     "css": [
-      "assets/app.d0e025b7.css"
+      "assets/app.83f06d2d.css"
     ],
     "assets": [
       "assets/CamptonBook.fa43203c.otf",
@@ -83,24 +83,24 @@
       "__plugin-vue_export-helper.d7009684.js"
     ]
   },
-  "resources/js/slider.css": {
-    "file": "assets/slider.2f3589b1.css",
-    "src": "resources/js/slider.css"
-  },
-  "navigation.css": {
-    "file": "assets/navigation.7b1f8205.css",
-    "src": "navigation.css"
-  },
   "resources/js/works_slider.css": {
     "file": "assets/works_slider.b74d03b4.css",
     "src": "resources/js/works_slider.css"
+  },
+  "resources/js/slider.css": {
+    "file": "assets/slider.2f3589b1.css",
+    "src": "resources/js/slider.css"
   },
   "resources/js/admin.css": {
     "file": "assets/admin.a95347c2.css",
     "src": "resources/js/admin.css"
   },
   "resources/js/app.css": {
-    "file": "assets/app.d0e025b7.css",
+    "file": "assets/app.83f06d2d.css",
     "src": "resources/js/app.css"
+  },
+  "navigation.css": {
+    "file": "assets/navigation.7b1f8205.css",
+    "src": "navigation.css"
   }
 }

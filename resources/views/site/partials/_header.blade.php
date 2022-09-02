@@ -1,6 +1,6 @@
 <header class="container flex">
     <div class="logo">
-        <a href="{{ route('work.index') }}" class=" text-5xl font-bold">Drégely<br>Imre</a>
+        <a href="{{ route('home') }}" class=" text-5xl font-bold">Drégely<br>Imre</a>
     </div>
     <div class="hidden lg:block">
         @include('site.partials._nav_lang_switcher')
