@@ -16,21 +16,6 @@
     @vite('resources/js/app.js')
     @yield('css')
 
-    <!-- Scripts -->
-{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
-{{--    <script src="http://balinthaz:8080/js/app.js"></script>--}}
-
-    <!-- Fonts -->
-{{--    <link rel="dns-prefetch" href="//fonts.gstatic.com">--}}
-{{--    <link rel="preconnect" href="https://fonts.googleapis.com">--}}
-{{--    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>--}}
-{{--    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">--}}
-
-    <!-- Styles -->
-{{--    <link href="{{ mix('css/app.css') }}" rel="stylesheet">--}}
-
-{{--    @include('front.partials._svg_links')--}}
-
 </head>
 <body class="h-screen relative flex flex-col md:block">
 {{--<body class="relative h-full">--}}

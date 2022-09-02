@@ -25,6 +25,11 @@ class PageController extends BaseController
         $this->repository = $repository;
     }
 
+    public function home()
+    {
+        return view('welcome');
+    }
+
     public function view(Page $page)
     {
         return view('site.pages.view',compact('page'));

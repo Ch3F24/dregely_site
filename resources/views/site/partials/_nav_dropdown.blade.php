@@ -1,7 +1,13 @@
 <div x-data="{ open: false }" x-init="open = {{ request()->is(app()->getLocale() . '/' . $part . '*') ? 'true' : 'false' }}">
-    <p>
-        <span :class="open ? 'font-medium' : ''" @click="open = ! open" class="cursor-pointer hover:font-medium {{ (request()->is(app()->getLocale() . '/' . $part . '*')) ? 'font-medium' : '' }}">{{ $title }}</span>
-    </p>
+    @if(isset($gallery))
+        <a href="{{ route( 'work.index') }}">
+            <span :class="open ? 'font-medium' : ''" @click="open = ! open" class="cursor-pointer hover:font-medium {{ (request()->is(app()->getLocale() . '/' . $part . '*')) ? 'font-medium' : '' }}">{{ $title }}</span>
+        </a>
+    @else
+        <p>
+            <span :class="open ? 'font-medium' : ''" @click="open = ! open" class="cursor-pointer hover:font-medium {{ (request()->is(app()->getLocale() . '/' . $part . '*')) ? 'font-medium' : '' }}">{{ $title }}</span>
+        </p>
+    @endif
     @if(count($links))
         <ul class="pl-4 my-2 scrollbar overflow-x-hidden scrollbar-thin scrollbar-thumb-dgrey scrollbar-thumb-rounded scrollbar-track-rounded" x-show="open" style="display: none"
             x-transition:enter="transition ease-out duration-1000"

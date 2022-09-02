@@ -28,13 +28,13 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 //Route::get('/{slug}',[PageController::class,'view'])->name('page.view')->where('slug','.*');
 
 Route::prefix(LaravelLocalization::setLocale())->middleware(['localize', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])->group(function () {
-    Route::get('/',[WorkController::class,'index'])->name('work.index');
+    Route::get('/',[PageController::class,'home'])->name('home');
 
     Route::get('/articles',[ArticleController::class,'index'])->name('article.index');
     Route::get('/publications',[PageController::class,'publications'])->name('publication.index');
 
     Route::prefix('/work')->name('work.')->group(function () {
-//        Route::get('/',[WorkController::class,'index'])->name('index');
+        Route::get('/',[WorkController::class,'index'])->name('index');
         Route::get('/{work}',[WorkController::class,'view'])->name('view');
     });
 
