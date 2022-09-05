@@ -32,6 +32,14 @@
         'label' => 'Borító',
     ])
 
+    @formField('wysiwyg', [
+        'name' => 'description',
+        'label' => 'Leírás',
+        'toolbarOptions' => ['list-ordered', 'list-unordered'],
+        'placeholder' => 'Leírás',
+        'translated' => true
+    ])
+
     @section('sideFieldset')
         @include('admin.partials.seo')
     @endsection

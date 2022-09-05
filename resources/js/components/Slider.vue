@@ -43,13 +43,15 @@
                     </video>
                     <img :src="slide" class="h-full mx-auto" alt="">
                 </div>
-
-<!--                <div class="w-full h-full slide-image" v-if="isImage && slide.src" :style="{ backgroundImage: 'url(' + slide.src + ')' }">-->
-<!--                </div>-->
             </swiper-slide>
+
             <swiper-slide v-else class="flex-row h-full swiper-no-swiping" :class="{'full-w' : slidesPerView === 1}" v-for="slide in slides">
-                <div class="w-full h-full slide-image swiper-no-swiping" v-if="isImage && slide.photos" :style="{ backgroundImage: 'url(' + slide.photos[0].src + ')' }">
+                <div class="w-full h-full slide-image" v-if="slide.description" v-html="description">
                 </div>
+
+                <div class="w-full h-full slide-image swiper-no-swiping" v-else-if="isImage && slide.photos" :style="{ backgroundImage: 'url(' + slide.photos[0].src + ')' }">
+                </div>
+
                 <article class="space-y-4" v-else>
                     <h3>
                         <span v-if="slide.title">{{ slide.title }}</span>
@@ -149,6 +151,9 @@ export default {
         },
         isVideo: {
             default: false
+        },
+        description: {
+            default: null
         }
     },
     data() {
@@ -175,20 +180,17 @@ export default {
                     if (this.exhibition) {
                         this.activeSlide = e.data.data
                     } else {
-                        this.activeSlide = e.data.data[0]
+                        if (this.description) {
+                            this.slides.unshift({description: this.description})
+                            this.activeSlide = this.slides[0]
+                        } else {
+                            this.activeSlide = e.data.data[0]
+                        }
                     }
                 }
             }).catch(e => {
                 console.log(e)
             })
-        },
-        genyo() {
-        // const activeSlide = document.querySelector('.swiper-slide-active').children[0]
-
-        // console.log(activeSlide)
-        this.open = true
-        this.selectThumbnail(this.thumbnailIndex)
-
         },
         resize(image, params = []) {
             let src = image.src.split('?'[0])[0];

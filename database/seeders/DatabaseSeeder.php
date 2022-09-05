@@ -54,7 +54,6 @@ class DatabaseSeeder extends Seeder
             array("31","Animals","Animals"),
             array("32","Panoptikum","Panopticon"),
             array("33","TŰZ","Fire"),
-            array("34","Installációk","Intsallations"),
 //            array("35","Video/animáció","Moving images")
         );
 

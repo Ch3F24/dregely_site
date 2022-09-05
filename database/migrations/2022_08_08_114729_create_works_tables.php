@@ -22,6 +22,7 @@ class CreateWorksTables extends Migration
             createDefaultTranslationsTableFields($table, 'work');
             $table->string('title', 200)->nullable();
             $table->text('meta_description')->nullable();
+            $table->text('description')->nullable();
         });
 
         Schema::create('work_slugs', function (Blueprint $table) {

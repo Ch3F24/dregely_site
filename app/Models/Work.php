@@ -22,12 +22,14 @@ class Work extends Model implements Sortable
         'position',
         'parent_work_id',
         'year',
-        'reference_number'
+        'reference_number',
+        'description'
     ];
 
     public $translatedAttributes = [
         'title',
         'meta_description',
+        'description',
         'active',
     ];
 
