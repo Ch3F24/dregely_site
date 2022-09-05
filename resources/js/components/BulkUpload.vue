@@ -54,8 +54,8 @@ export default {
             } else if(this.form.row_start < 1 || this.form.row_limit < 1) {
                 alert('Nem megfelelőek a feltölteni kívánt sorok száma.')
 
-            } else if(this.form.file.type !== 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') {
-                alert('Csak xslx file formátum tölthető fel')
+            } else if(this.form.file.type !== 'text/csv') {
+                alert('Csak csv file formátum tölthető fel')
             } else {
 
                 this.loading = true;

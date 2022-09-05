@@ -38,7 +38,7 @@ class WorkController extends BaseController
     public function storeBulkUpdate(Request $request)
     {
         try {
-            Excel::import(new PhotoImport(intval($request->row_start),intval($request->row_limit)), $request->file);
+            Excel::import(new PhotoImport(intval($request->row_start),intval($request->row_limit)), $request->file,null,\Maatwebsite\Excel\Excel::CSV);
         } catch (ValidationException $e) {
             $failures = $e->failures();
 

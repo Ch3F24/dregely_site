@@ -50,7 +50,7 @@
     ]
   },
   "resources/js/admin.js": {
-    "file": "assets/admin.e500ee2a.js",
+    "file": "assets/admin.23fd6612.js",
     "src": "resources/js/admin.js",
     "isEntry": true,
     "imports": [
@@ -59,7 +59,7 @@
       "__plugin-vue_export-helper.d7009684.js"
     ],
     "css": [
-      "assets/admin.a95347c2.css"
+      "assets/admin.5aca23aa.css"
     ]
   },
   "_index.83bc9570.js": {
@@ -83,24 +83,24 @@
       "__plugin-vue_export-helper.d7009684.js"
     ]
   },
-  "resources/js/works_slider.css": {
-    "file": "assets/works_slider.b74d03b4.css",
-    "src": "resources/js/works_slider.css"
+  "resources/js/admin.css": {
+    "file": "assets/admin.5aca23aa.css",
+    "src": "resources/js/admin.css"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app.f14f9d35.css",
+    "src": "resources/js/app.css"
   },
   "resources/js/slider.css": {
     "file": "assets/slider.2f3589b1.css",
     "src": "resources/js/slider.css"
   },
-  "resources/js/admin.css": {
-    "file": "assets/admin.a95347c2.css",
-    "src": "resources/js/admin.css"
-  },
   "navigation.css": {
     "file": "assets/navigation.7b1f8205.css",
     "src": "navigation.css"
   },
-  "resources/js/app.css": {
-    "file": "assets/app.f14f9d35.css",
-    "src": "resources/js/app.css"
+  "resources/js/works_slider.css": {
+    "file": "assets/works_slider.b74d03b4.css",
+    "src": "resources/js/works_slider.css"
   }
 }

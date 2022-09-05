@@ -4,17 +4,12 @@ namespace App\Imports;
 
 use App\Models\Photo;
 use App\Models\Work;
-use Illuminate\Support\Facades\Log;
 use Maatwebsite\Excel\Concerns\RemembersRowNumber;
-use Maatwebsite\Excel\Concerns\SkipsEmptyRows;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithLimit;
 use Maatwebsite\Excel\Concerns\WithStartRow;
-use Maatwebsite\Excel\Concerns\WithHeadingRow;
-use Maatwebsite\Excel\Concerns\WithValidation;
 
 class PhotoImport implements ToModel, WithStartRow,WithLimit
-//    ,WithColumnLimit
 {
     use RemembersRowNumber;
 
@@ -41,7 +36,7 @@ class PhotoImport implements ToModel, WithStartRow,WithLimit
      */
     public function model(array $row)
     {
-        Log::error($this->getRowNumber());
+        clock($row);
         $work = Work::query()->where('reference_number', substr($row[1], 0, 2))->first();
         $photo = Photo::query()->where('reference_number', $row[1])->first();
         if ($photo) {
