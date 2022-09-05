@@ -8,6 +8,8 @@ class ArticleController extends BaseModuleController
 {
     protected $moduleName = 'articles';
 
+    protected $defaultOrders = ['id' => 'desc'];
+
     protected $indexOptions = [
         'permalink' => false,
     ];

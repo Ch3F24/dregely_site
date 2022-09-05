@@ -19,6 +19,6 @@ class ArticleController extends Controller
 
     public function index()
     {
-        return ArticleCollection::collection($this->repository->all()->where('published'));
+        return ArticleCollection::collection($this->repository->all()->where('published')->sortByDesc('id'));
     }
 }

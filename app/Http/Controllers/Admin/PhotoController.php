@@ -9,8 +9,6 @@ class PhotoController extends BaseModuleController
 {
     protected $moduleName = 'photos';
 
-    protected $indexOptions = [
-    ];
 
     protected function formData($request)
     {

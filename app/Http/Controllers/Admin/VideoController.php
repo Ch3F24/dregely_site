@@ -8,6 +8,8 @@ class VideoController extends BaseModuleController
 {
     protected $moduleName = 'videos';
 
+    protected $defaultOrders = ['id' => 'desc'];
+
     protected $indexOptions = [
     ];
 }

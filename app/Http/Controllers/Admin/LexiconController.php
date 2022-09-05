@@ -8,6 +8,8 @@ class LexiconController extends BaseModuleController
 {
     protected $moduleName = 'lexicons';
 
+    protected $defaultOrders = ['id' => 'desc'];
+
     protected $indexOptions = [
         'permalink' => false,
     ];

@@ -8,6 +8,6 @@ class ExhibitionController extends BaseModuleController
 {
     protected $moduleName = 'exhibitions';
 
-    protected $indexOptions = [
-    ];
+    protected $defaultOrders = ['id' => 'desc'];
+
 }

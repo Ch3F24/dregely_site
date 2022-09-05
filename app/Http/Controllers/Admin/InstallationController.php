@@ -8,6 +8,6 @@ class InstallationController extends BaseModuleController
 {
     protected $moduleName = 'installations';
 
-    protected $indexOptions = [
-    ];
+    protected $defaultOrders = ['id' => 'desc'];
+
 }

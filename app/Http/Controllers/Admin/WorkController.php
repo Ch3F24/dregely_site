@@ -9,8 +9,7 @@ class WorkController extends BaseModuleController
 {
     protected $moduleName = 'works';
 
-    protected $indexOptions = [
-    ];
+    protected $defaultOrders = ['id' => 'desc'];
 
     protected function formData($request)
     {
