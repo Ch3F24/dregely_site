@@ -30,6 +30,7 @@ Route::get('/photos/{id}',[PhotoController::class,'index'])->name('api.photo.ind
 Route::get('/articles',[ArticleController::class,'index'])->name('api.article.index');
 Route::get('/publications',[PublicationController::class,'index'])->name('api.publication.index');
 Route::get('/work',[WorkController::class,'index'])->name('api.work.index');
+Route::get('/work/{slug}',[WorkController::class,'parent'])->name('api.work.parent');
 Route::get('/lexicon',[LexiconController::class,'index'])->name('api.lexicon.index');
 Route::get('/exhibition/{id}',[ExhibitionController::class,'photos'])->name('api.exhibition.view');
 Route::get('/installation/{id}',[InstallationController::class,'photos'])->name('api.installation.view');

@@ -18,10 +18,16 @@
             x-transition:leave-end="opacity-0 translate-y-1">
             @foreach($links as $link)
                 @if($link->child && count($link->child))
-                    <li x-data="{ child: false }">
-                        <p>
-                            <span :class="child ? 'font-medium' : '' " @click="child = ! child" class="cursor-pointer hover:font-medium">{{ $link->title }}</span>
-                        </p>
+                    <li x-data="{ child: false }" x-init="child = {{ request()->is(app()->getLocale() . '/' . $part . '/parent/*') ? 'true' : 'false' }}">
+                        @if(isset($gallery))
+                            <a href="{{ route( 'work.parent',$link->slug) }}">
+                                <span :class="child ? 'font-medium' : ''" @click="child = ! child" class="cursor-pointer hover:font-medium {{ (request()->is(app()->getLocale() . '/' . $part .  '/parent/*')) ? 'font-medium' : '' }}">{{ $link->title }}</span>
+                            </a>
+                        @else
+                            <p>
+                                <span :class="child ? 'font-medium' : '' " @click="child = ! child" class="cursor-pointer hover:font-medium">{{ $link->title }}</span>
+                            </p>
+                        @endif
                         <ul class="pl-4 my-4 scrollbar overflow-x-hidden scrollbar-thin scrollbar-thumb-dgrey scrollbar-thumb-rounded scrollbar-track-rounded" x-show="child"
                             x-transition:enter="transition ease-out duration-1000"
                             x-transition:enter-start="opacity-0 translate-y-1"

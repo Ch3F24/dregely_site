@@ -26,7 +26,7 @@
             }"
             class="work-slider h-full w-full">
             <swiper-slide class="flex-row h-80 lg:h-full w-full" v-for="slide in slides">
-                <a :href="lang + '/work/' + slide.slug" class="w-full h-full z-10 swiper-no-swiping flex flex-col" :title="slide.title">
+                <a :href="'/' + lang + '/work/' + slide.slug" class="w-full h-full z-10 swiper-no-swiping flex flex-col" :title="slide.title">
                     <div class="w-full flex-1 overflow-hidden">
                         <div class="h-full w-full bg-cover bg-no-repeat bg-center hover:scale-110 transition-transform bg-dgrey	" :style="{ backgroundImage: 'url(' + slide.cover + ')' }"></div>
                     </div>
@@ -67,6 +67,11 @@ export default {
             lang: ''
       }
     },
+    props: {
+        action: {
+            type: String
+        }
+    },
     components: {Swiper, SwiperSlide},
 
     mounted() {
@@ -75,7 +80,7 @@ export default {
     },
     methods: {
         loadSlides() {
-            Axios.get('/api/work').then(e => {
+            Axios.get(this.action).then(e => {
                 this.slides = e.data.data
                 this.activeSlide = e.data.data[0]
             }).catch(e => {

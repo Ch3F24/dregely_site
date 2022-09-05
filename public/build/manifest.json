@@ -23,40 +23,38 @@
     ]
   },
   "resources/js/works_slider.js": {
-    "file": "assets/works_slider.1618b627.js",
+    "file": "assets/works_slider.ccbffab5.js",
     "src": "resources/js/works_slider.js",
     "isEntry": true,
     "imports": [
-      "__plugin-vue_export-helper.d7009684.js",
+      "__plugin-vue_export-helper.dca86667.js",
       "_index.83bc9570.js",
-      "_navigation.min.38df2bf9.js"
+      "_navigation.min.532351e4.js"
     ],
     "css": [
       "assets/works_slider.b74d03b4.css"
     ]
   },
   "resources/js/slider.js": {
-    "file": "assets/slider.f5f116e9.js",
+    "file": "assets/slider.fa4b7695.js",
     "src": "resources/js/slider.js",
     "isEntry": true,
     "imports": [
-      "_vue.esm-bundler.e0398ebd.js",
+      "__plugin-vue_export-helper.dca86667.js",
       "_index.83bc9570.js",
-      "__plugin-vue_export-helper.d7009684.js",
-      "_navigation.min.38df2bf9.js"
+      "_navigation.min.532351e4.js"
     ],
     "css": [
       "assets/slider.2f3589b1.css"
     ]
   },
   "resources/js/admin.js": {
-    "file": "assets/admin.23fd6612.js",
+    "file": "assets/admin.604fe157.js",
     "src": "resources/js/admin.js",
     "isEntry": true,
     "imports": [
-      "_vue.esm-bundler.e0398ebd.js",
-      "_index.83bc9570.js",
-      "__plugin-vue_export-helper.d7009684.js"
+      "__plugin-vue_export-helper.dca86667.js",
+      "_index.83bc9570.js"
     ],
     "css": [
       "assets/admin.5aca23aa.css"
@@ -65,42 +63,36 @@
   "_index.83bc9570.js": {
     "file": "assets/index.83bc9570.js"
   },
-  "__plugin-vue_export-helper.d7009684.js": {
-    "file": "assets/_plugin-vue_export-helper.d7009684.js"
+  "__plugin-vue_export-helper.dca86667.js": {
+    "file": "assets/_plugin-vue_export-helper.dca86667.js"
   },
-  "_navigation.min.38df2bf9.js": {
-    "file": "assets/navigation.min.38df2bf9.js",
+  "_navigation.min.532351e4.js": {
+    "file": "assets/navigation.min.532351e4.js",
     "imports": [
-      "__plugin-vue_export-helper.d7009684.js"
+      "__plugin-vue_export-helper.dca86667.js"
     ],
     "css": [
       "assets/navigation.7b1f8205.css"
     ]
   },
-  "_vue.esm-bundler.e0398ebd.js": {
-    "file": "assets/vue.esm-bundler.e0398ebd.js",
-    "imports": [
-      "__plugin-vue_export-helper.d7009684.js"
-    ]
+  "resources/js/slider.css": {
+    "file": "assets/slider.2f3589b1.css",
+    "src": "resources/js/slider.css"
   },
   "resources/js/admin.css": {
     "file": "assets/admin.5aca23aa.css",
     "src": "resources/js/admin.css"
   },
+  "resources/js/works_slider.css": {
+    "file": "assets/works_slider.b74d03b4.css",
+    "src": "resources/js/works_slider.css"
+  },
   "resources/js/app.css": {
     "file": "assets/app.f14f9d35.css",
     "src": "resources/js/app.css"
   },
-  "resources/js/slider.css": {
-    "file": "assets/slider.2f3589b1.css",
-    "src": "resources/js/slider.css"
-  },
   "navigation.css": {
     "file": "assets/navigation.7b1f8205.css",
     "src": "navigation.css"
-  },
-  "resources/js/works_slider.css": {
-    "file": "assets/works_slider.b74d03b4.css",
-    "src": "resources/js/works_slider.css"
   }
 }

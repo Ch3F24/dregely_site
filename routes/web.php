@@ -36,6 +36,7 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(['localize', 'locale
     Route::prefix('/work')->name('work.')->group(function () {
         Route::get('/',[WorkController::class,'index'])->name('index');
         Route::get('/{work}',[WorkController::class,'view'])->name('view');
+        Route::get('/parent/{work}',[WorkController::class,'parent'])->name('parent');
     });
 
     Route::get('/exhibition/{exhibition}',[ExhibitionController::class,'view'])->name('exhibition.view');
