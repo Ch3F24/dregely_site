@@ -63,18 +63,13 @@ return [
     'settings' => [
         'title' => 'Settings',
         'route' => 'admin.settings',
-        'params' => ['section' => 'contact'],
+        'params' => ['section' => 'meta'],
         'primary_navigation' => [
             'meta' => [
                 'title' => 'Meta',
                 'route' => 'admin.settings',
                 'params' => ['section' => 'meta']
-            ],
-//            'social_media' => [
-//                'title' => 'Social media',
-//                'route' => 'admin.settings',
-//                'params' => ['section' => 'social_media']
-//            ],
+            ]
         ]
     ],
 ];

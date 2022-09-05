@@ -48,13 +48,13 @@ main .swiper-button-next {
 }
 main {
     height: calc(100vh - var(--head-height) - var(--footer-heigth));
-    min-height: 300px;
+    min-height: 600px;
 }
 
 /*Slider*/
-.image-container {
+/*.image-container {*/
     /*height: calc(100% - 144px);*/
-}
+/*}*/
 .landscape {
     @apply w-full max-h-full;
 }

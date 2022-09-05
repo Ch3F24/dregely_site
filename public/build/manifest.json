@@ -15,7 +15,7 @@
       "_index.83bc9570.js"
     ],
     "css": [
-      "assets/app.83f06d2d.css"
+      "assets/app.f14f9d35.css"
     ],
     "assets": [
       "assets/CamptonBook.fa43203c.otf",
@@ -95,12 +95,12 @@
     "file": "assets/admin.a95347c2.css",
     "src": "resources/js/admin.css"
   },
-  "resources/js/app.css": {
-    "file": "assets/app.83f06d2d.css",
-    "src": "resources/js/app.css"
-  },
   "navigation.css": {
     "file": "assets/navigation.7b1f8205.css",
     "src": "navigation.css"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app.f14f9d35.css",
+    "src": "resources/js/app.css"
   }
 }

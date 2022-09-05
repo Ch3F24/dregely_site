@@ -20,4 +20,4 @@ Route::group(['prefix' => 'pages'], function () {
     Route::module('pages');
     Route::singleton('contact');
 });
-//Route::module('settings');
+Route::module('settings');

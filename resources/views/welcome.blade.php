@@ -6,13 +6,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    {{--    <meta name="api-token" content="{{ auth()->check() && session()->has('api_token') ? session()->get('api_token') : '' }}">--}}
-    {{--    <meta name="GA" content="{{ env('GA_ID') }}">--}}
-
-
-    {{--    <meta name="og:site_name" content="{{ config('app.name') }}">--}}
-    @yield('meta')
-
+    @include('site/partials/_meta')
     @vite('resources/js/app.js')
     @yield('css')
 
