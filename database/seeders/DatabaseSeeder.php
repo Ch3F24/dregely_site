@@ -33,14 +33,8 @@ class DatabaseSeeder extends Seeder
         $works = array(
             array("11","70-es évek","70s"),
             array("12","Budapest éjszaka","Budapest night"),
-            array("13","Kompozitok","Composites"),
-            array("14","Notre Dame","Notre Dame"),
-            array("15","Archívum","Archiv"),
-            array("16","Transfer Ticket","Transfer Ticket"),
-            array("17","Aktok","Nudes"),
-            array("18","Egyebek","Miscellanous"),
             array("19","Csendéletek","Still lifes"),
-            array("20","Közös munkák  (Bányay-Drégely)","Common Works (Bányay-Drégely),"),
+            array("20","Bányay-Drégely","Bányay-Drégely"),
             array("21","Objektek I.","Objects I."),
             array("22","Objektek II.","Objects II."),
             array("23","Objektek III.","Objects III."),
@@ -49,12 +43,20 @@ class DatabaseSeeder extends Seeder
             array("26","Részecskék","Particles"),
             array("27","DIID","DIID"),
             array("28","BudapestBlue","BudapestBlue"),
-            array("29","SZENZOR","Sensor"),
+            array("29","Szenzor","Sensor"),
             array("30","Luna'69","Luna'69"),
             array("31","Animals","Animals"),
             array("32","Panoptikum","Panopticon"),
-            array("33","TŰZ","Fire"),
-//            array("35","Video/animáció","Moving images")
+            array("33","T-Idő","T-Time"),
+            array("34","Polaroidok","Polaroids"),
+
+
+            array("13","SX-70 kollázsok","SX-70 Collages",18),
+            array("14","Notre Dame","Notre Dame",18),
+            array("15","Archívum","Archiv",18),
+            array("16","Transfer Ticket","Transfer Ticket",18),
+            array("17","Aktok","Nudes",18),
+            array("18","Egyebek","Miscellanous",18),
         );
 
         app(ContactRepository::class)->create([
@@ -75,6 +77,7 @@ class DatabaseSeeder extends Seeder
                     'hu' => $work[1],
                     'en' => $work[2],
                 ],
+                'parent_work_id' => isset($work[3]) ? $work[3] : null ,
                 'reference_number' => $work[0],
                 'published' => true,
             ]);

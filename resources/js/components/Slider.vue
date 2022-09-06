@@ -69,8 +69,8 @@
             </swiper-slide>
         </swiper>
     </div>
-    <div class="relative md:flex items-center min-h-[10%] md:px-12">
-        <div class="md:w-1/3 flex space-x-4 h-full items-center">
+    <div class="relative md:flex items-center md:justify-center min-h-[10%] md:px-12">
+        <div class="md:w-1/3 flex space-x-4 h-full items-center" v-if="withThumb && activeSlide && activeSlide.photos && activeSlide.photos.length > 1">
             <div class="w-1/3 z-50 cursor-pointer" v-if="withThumb && activeSlide && activeSlide.photos && activeSlide.photos.length > 1"
                  v-for="(thumb,key) in activeSlide.photos"
                  @click="selectThumbnail(key)">
