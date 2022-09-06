@@ -30,5 +30,11 @@ class WorkController extends BaseModuleController
             'title' => 'Referenciaszám',
             'field' => 'reference_number',
         ],
+        'parent' => [
+            'title' => 'Szülő',
+            'sort' => true,
+            'relationship' => 'parent',
+            'field' => 'title'
+        ],
     ];
 }
