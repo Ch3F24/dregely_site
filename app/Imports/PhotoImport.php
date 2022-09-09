@@ -46,16 +46,16 @@ class PhotoImport implements ToModel, WithStartRow,WithLimit
         if ($photo) {
             //Hu
             $photo->translate('hu')->title = $row[2];
-            $photo->translate('hu')->print = $row[7];
+            $photo->translate('hu')->print = isset($row[7]) ? $row[7] : '';
 
             //En
             $photo->translate('en')->title = $row[3];
-            $photo->translate('en')->print = $row[8];
+            $photo->translate('en')->print = isset($row[8]) ? $row[8] : '';
 
             //Non translated
-            $photo->edition_number = $row[9];
-            $photo->year = $row[4];
-            $photo->size = $row[6];
+            $photo->edition_number = isset($row[9]) ? $row[9] : '';
+            $photo->year = isset($row[4]) ? $row[4] : '';
+            $photo->size = isset($row[6]) ? $row[6] : '';
             $photo->work_id = $work?->id;
             $photo->reference_number = $row[1];
 
@@ -65,17 +65,17 @@ class PhotoImport implements ToModel, WithStartRow,WithLimit
             return new Photo([
                 'hu' => [
                     'title' => $row[2],
-                    'print' => $row[7],
+                    'print' => isset($row[7]) ? $row[7] : '',
                     'active' => true
                 ],
                 'en' => [
                     'title' => $row[3],
-                    'print' => $row[8],
+                    'print' => isset($row[8]) ? $row[8] : '',
                     'active' => true
                 ],
-                'edition_number' => $row[9],
-                'year' => $row[4],
-                'size' => $row[6],
+                'edition_number' => isset($row[9]) ? $row[9] : '',
+                'year' => isset($row[4]) ? $row[4] : '',
+                'size' => isset($row[6]) ? $row[6] : '',
                 'work_id' => $work?->id,
                 'reference_number' => $row[1],
                 'published' => false
