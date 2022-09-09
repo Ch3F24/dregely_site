@@ -40,7 +40,7 @@ class PhotoImport implements ToModel, WithStartRow,WithLimit
     {
         Cache::flush();
         ResponseCache::clear();
-//        clock($row);
+        clock($row);
         $work = Work::query()->where('reference_number', substr($row[1], 0, 2))->first();
         $photo = Photo::query()->where('reference_number', $row[1])->first();
         if ($photo) {
