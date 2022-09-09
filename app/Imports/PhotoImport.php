@@ -4,10 +4,12 @@ namespace App\Imports;
 
 use App\Models\Photo;
 use App\Models\Work;
+use Illuminate\Support\Facades\Cache;
 use Maatwebsite\Excel\Concerns\RemembersRowNumber;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithLimit;
 use Maatwebsite\Excel\Concerns\WithStartRow;
+use Spatie\ResponseCache\Facades\ResponseCache;
 
 class PhotoImport implements ToModel, WithStartRow,WithLimit
 {
@@ -36,7 +38,9 @@ class PhotoImport implements ToModel, WithStartRow,WithLimit
      */
     public function model(array $row)
     {
-        clock($row);
+        Cache::flush();
+        ResponseCache::clear();
+//        clock($row);
         $work = Work::query()->where('reference_number', substr($row[1], 0, 2))->first();
         $photo = Photo::query()->where('reference_number', $row[1])->first();
         if ($photo) {
