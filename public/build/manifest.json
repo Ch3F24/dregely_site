@@ -1,11 +1,11 @@
 {
-  "public/fonts/CamptonBook.otf": {
-    "file": "assets/CamptonBook.fa43203c.otf",
-    "src": "public/fonts/CamptonBook.otf"
-  },
   "public/fonts/CamptonMedium.otf": {
     "file": "assets/CamptonMedium.c0246a50.otf",
     "src": "public/fonts/CamptonMedium.otf"
+  },
+  "public/fonts/CamptonBook.otf": {
+    "file": "assets/CamptonBook.fa43203c.otf",
+    "src": "public/fonts/CamptonBook.otf"
   },
   "resources/js/app.js": {
     "file": "assets/app.dea79288.js",
@@ -49,7 +49,7 @@
     ]
   },
   "resources/js/admin.js": {
-    "file": "assets/admin.604fe157.js",
+    "file": "assets/admin.19d4c510.js",
     "src": "resources/js/admin.js",
     "isEntry": true,
     "imports": [
@@ -57,7 +57,7 @@
       "_index.83bc9570.js"
     ],
     "css": [
-      "assets/admin.5aca23aa.css"
+      "assets/admin.592eae80.css"
     ]
   },
   "_index.83bc9570.js": {
@@ -84,7 +84,7 @@
     "src": "resources/js/slider.css"
   },
   "resources/js/admin.css": {
-    "file": "assets/admin.5aca23aa.css",
+    "file": "assets/admin.592eae80.css",
     "src": "resources/js/admin.css"
   },
   "navigation.css": {
