@@ -225,12 +225,12 @@ export default {
 
             let _this = this
             setTimeout(function () {
-                if (!this.exhibition) {
+                if (!_this.exhibition) {
                     _this.currentIndex = swiper.activeIndex
                     _this.activeSlide = _this.slides[swiper.activeIndex]
                 }
+                _this.loading = false
             },300)
-            this.loading = false
         },
         selectThumbnail(key) {
             this.thumbnailIndex = key;
