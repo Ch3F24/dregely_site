@@ -1,11 +1,11 @@
 {
-  "public/fonts/CamptonMedium.otf": {
-    "file": "assets/CamptonMedium.c0246a50.otf",
-    "src": "public/fonts/CamptonMedium.otf"
-  },
   "public/fonts/CamptonBook.otf": {
     "file": "assets/CamptonBook.fa43203c.otf",
     "src": "public/fonts/CamptonBook.otf"
+  },
+  "public/fonts/CamptonMedium.otf": {
+    "file": "assets/CamptonMedium.c0246a50.otf",
+    "src": "public/fonts/CamptonMedium.otf"
   },
   "resources/js/app.js": {
     "file": "assets/app.dea79288.js",
@@ -23,37 +23,37 @@
     ]
   },
   "resources/js/works_slider.js": {
-    "file": "assets/works_slider.ccbffab5.js",
+    "file": "assets/works_slider.0bcc0cc5.js",
     "src": "resources/js/works_slider.js",
     "isEntry": true,
     "imports": [
-      "__plugin-vue_export-helper.dca86667.js",
+      "__plugin-vue_export-helper.e80772d1.js",
       "_index.83bc9570.js",
-      "_navigation.min.532351e4.js"
+      "_lazyload.esm.4c3b04d8.js"
     ],
     "css": [
       "assets/works_slider.b74d03b4.css"
     ]
   },
   "resources/js/slider.js": {
-    "file": "assets/slider.199087d3.js",
+    "file": "assets/slider.d2300376.js",
     "src": "resources/js/slider.js",
     "isEntry": true,
     "imports": [
-      "__plugin-vue_export-helper.dca86667.js",
+      "__plugin-vue_export-helper.e80772d1.js",
       "_index.83bc9570.js",
-      "_navigation.min.532351e4.js"
+      "_lazyload.esm.4c3b04d8.js"
     ],
     "css": [
       "assets/slider.2f3589b1.css"
     ]
   },
   "resources/js/admin.js": {
-    "file": "assets/admin.19d4c510.js",
+    "file": "assets/admin.60ecc98f.js",
     "src": "resources/js/admin.js",
     "isEntry": true,
     "imports": [
-      "__plugin-vue_export-helper.dca86667.js",
+      "__plugin-vue_export-helper.e80772d1.js",
       "_index.83bc9570.js"
     ],
     "css": [
@@ -63,33 +63,33 @@
   "_index.83bc9570.js": {
     "file": "assets/index.83bc9570.js"
   },
-  "__plugin-vue_export-helper.dca86667.js": {
-    "file": "assets/_plugin-vue_export-helper.dca86667.js"
+  "__plugin-vue_export-helper.e80772d1.js": {
+    "file": "assets/_plugin-vue_export-helper.e80772d1.js"
   },
-  "_navigation.min.532351e4.js": {
-    "file": "assets/navigation.min.532351e4.js",
+  "_lazyload.esm.4c3b04d8.js": {
+    "file": "assets/lazyload.esm.4c3b04d8.js",
     "imports": [
-      "__plugin-vue_export-helper.dca86667.js"
+      "__plugin-vue_export-helper.e80772d1.js"
     ],
     "css": [
-      "assets/navigation.7b1f8205.css"
+      "assets/lazyload.7b1f8205.css"
     ]
-  },
-  "resources/js/works_slider.css": {
-    "file": "assets/works_slider.b74d03b4.css",
-    "src": "resources/js/works_slider.css"
   },
   "resources/js/slider.css": {
     "file": "assets/slider.2f3589b1.css",
     "src": "resources/js/slider.css"
   },
+  "lazyload.css": {
+    "file": "assets/lazyload.7b1f8205.css",
+    "src": "lazyload.css"
+  },
   "resources/js/admin.css": {
     "file": "assets/admin.592eae80.css",
     "src": "resources/js/admin.css"
   },
-  "navigation.css": {
-    "file": "assets/navigation.7b1f8205.css",
-    "src": "navigation.css"
+  "resources/js/works_slider.css": {
+    "file": "assets/works_slider.b74d03b4.css",
+    "src": "resources/js/works_slider.css"
   },
   "resources/js/app.css": {
     "file": "assets/app.9eec0c1b.css",

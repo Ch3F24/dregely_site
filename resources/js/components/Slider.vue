@@ -49,7 +49,8 @@
                 <div class="w-full h-full slide-image" v-if="slide.description" v-html="description">
                 </div>
 
-                <div class="w-full h-full slide-image swiper-no-swiping" v-else-if="isImage && slide.photos" :style="{ backgroundImage: 'url(' + slide.photos[0].src + ')' }">
+<!--                <div class="w-full h-full slide-image swiper-no-swiping" v-else-if="isImage && slide.photos" :style="{ backgroundImage: 'url(' + slide.photos[0].src + ')' }">-->
+                <div class="w-full h-full slide-image swiper-no-swiping lazy" v-else-if="isImage && slide.photos" :data-bg="slide.photos[0].src">
                 </div>
 
                 <article class="space-y-4" v-else>
@@ -118,6 +119,8 @@
 <script>
 import Axios from 'axios';
 import Modal from './Modal.vue'
+import LazyLoad from "vanilla-lazyload";
+
 
 import {Swiper, SwiperSlide} from 'swiper/vue';
 import {Pagination, Navigation} from 'swiper';
@@ -126,6 +129,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import '../../css/work.css';
 const body = document.body
+let myLazyLoad;
 
 export default {
     name: "slider.vue",
@@ -170,11 +174,17 @@ export default {
     components: {Swiper, SwiperSlide, Modal},
 
     mounted() {
-        this.loadPhotos()
+        this.loadPhotos().then(() => {
+            myLazyLoad = new LazyLoad({
+                elements_selector: '.lazy',
+                class_loaded: 'lazy-loaded',
+            });
+            myLazyLoad.update();
+        })
     },
     methods: {
         loadPhotos() {
-            Axios.get(this.route).then(e => {
+            return Axios.get(this.route).then(e => {
                 this.slides = e.data.data
                 if (e.data.data) {
                     if (this.exhibition) {

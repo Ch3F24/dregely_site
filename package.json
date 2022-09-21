@@ -18,6 +18,7 @@
     "dependencies": {
         "@vitejs/plugin-vue": "^3.0.2",
         "swiper": "^8.3.2",
+        "vanilla-lazyload": "^17.8.3",
         "vue": "^3.2.36",
         "vue-easy-lightbox": "^1.7.1",
         "vue-loader": "^17.0.0"

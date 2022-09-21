@@ -28,7 +28,7 @@
             <swiper-slide class="flex-row h-80 lg:h-full w-full" v-for="slide in slides">
                 <a :href="'/' + lang + '/work/' + slide.slug" class="w-full h-full z-10 swiper-no-swiping flex flex-col" :title="slide.title">
                     <div class="w-full flex-1 overflow-hidden">
-                        <div class="h-full w-full bg-cover bg-no-repeat bg-center hover:scale-110 transition-transform bg-dgrey	" :style="{ backgroundImage: 'url(' + slide.cover + ')' }"></div>
+                        <div class="h-full w-full bg-cover bg-no-repeat bg-center hover:scale-110 transition-transform bg-dgrey	lazy" :data-bg="slide.cover" ></div>
                     </div>
 <!--                    <img loading="lazy" :src="slide.cover" alt="first" class="object-cover max-h-[85%] my-auto w-full" :title="slide.title" />-->
                     <p class="text-left mt-4">{{ slide.title }} <span v-if="slide.year">- {{ slide.year }}</span></p>
@@ -54,7 +54,9 @@ import "swiper/css/navigation";
 import "swiper/css/grid";
 
 import '../../css/slider.css';
+import LazyLoad from "vanilla-lazyload";
 
+let myLazyLoad;
 
 export default {
     name: "slider.vue",
@@ -75,12 +77,18 @@ export default {
     components: {Swiper, SwiperSlide},
 
     mounted() {
-        this.loadSlides()
+        this.loadSlides().then(() => {
+            myLazyLoad = new LazyLoad({
+                elements_selector: '.lazy',
+                class_loaded: 'lazy-loaded',
+            });
+            myLazyLoad.update();
+        })
         this.lang = document.documentElement.lang;
     },
     methods: {
         loadSlides() {
-            Axios.get(this.action).then(e => {
+            return Axios.get(this.action).then(e => {
                 this.slides = e.data.data
                 this.activeSlide = e.data.data[0]
             }).catch(e => {
