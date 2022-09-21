@@ -220,7 +220,6 @@ export default {
             return src + '?' + queryString;
         },
         onHorizontalSlideChange(swiper) {
-            this.loading = true
             this.thumbnailIndex = 0;
 
             let _this = this
@@ -229,7 +228,6 @@ export default {
                     _this.currentIndex = swiper.activeIndex
                     _this.activeSlide = _this.slides[swiper.activeIndex]
                 }
-                _this.loading = false
             },300)
         },
         selectThumbnail(key) {
