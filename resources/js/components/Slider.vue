@@ -111,7 +111,7 @@
         <vue-easy-lightbox
             v-if="open && isImage"
             :visible="open"
-            :imgs="resize(activeSlide.photos[thumbnailIndex],{w: 3200})"
+            :imgs="resize(activeSlide.photos[thumbnailIndex],{w: 2400})"
             @hide="openGallery"
         >
         </vue-easy-lightbox>
