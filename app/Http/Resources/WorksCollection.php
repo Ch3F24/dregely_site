@@ -16,7 +16,7 @@ class WorksCollection extends JsonResource
     public function toArray($request)
     {
         return [
-            'cover' => $this->resource->image('cover','default'),
+            'cover' => $this->resource->image('cover','default',['w' => 420]),
             'year' => $this->year,
             'title' => $this->title,
             'slug' => $this->resource->slug
