@@ -23,7 +23,7 @@ class WorkController extends Controller
      */
     public function index()
     {
-        return WorksCollection::collection(Work::doesntHave('child')->published()->orderBy('id','desc')->get());
+        return WorksCollection::collection(Work::doesntHave('child')->published()->orderBy('id')->get());
     }
 
     public function parent($slug)
