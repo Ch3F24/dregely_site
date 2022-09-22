@@ -29,13 +29,13 @@ a,p,h1,h2,h3,h4 {
     @apply text-dgrey
 }
 header {
-    @apply flex justify-between items-start py-12;
+    @apply flex justify-between items-start py-8;
 }
 main .swiper-button-next,
 main .swiper-button-prev {
     color: #000000;
     -webkit-text-stroke: 2px white;
-    @apply hidden md:flex
+    @apply flex top-[200%] md:top-[50%]
 }
 main .swiper-button-prev {
     left: 0;

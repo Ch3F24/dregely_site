@@ -19,7 +19,7 @@ class ExhibitionController extends Controller
             'isExhibition' => true,
             'slides' => 1,
             'isImage' => 1,
-            'dots' => true,
+            'dots' => false,
             'isVideo' => 0
 
         ]);

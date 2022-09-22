@@ -2,10 +2,12 @@
 
 @section('contentFields')
     @formField('input', [
+        'translated' => true,
         'name' => 'description',
         'label' => 'Description',
-        'translated' => true,
-        'maxlength' => 150
+        'maxlength' => 500,
+        'type' => 'textarea',
+        'rows' => 3
     ])
 
     @formField('input', [
