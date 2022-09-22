@@ -78,7 +78,7 @@
     </div>
     <div class="relative md:flex items-center md:justify-center min-h-[10%] md:px-12 space-x-4">
         <div class="flex space-x-4 h-full items-center" :class="{'md:w-1/3' : dots,'md:w-1/2' : !dots}" v-if="withThumb && activeSlide && activeSlide.photos && activeSlide.photos.length > 1">
-            <div class="w-20 h-20 z-50 cursor-pointer" v-if="withThumb && activeSlide && activeSlide.photos && activeSlide.photos.length > 1"
+            <div class="w-16 h-16 z-50 cursor-pointer" v-if="withThumb && activeSlide && activeSlide.photos && activeSlide.photos.length > 1"
                  v-for="(thumb,key) in activeSlide.photos"
                  @click="selectThumbnail(key)">
                     <span :style="{ backgroundImage: 'url(' + resize(thumb,{w: 80,h:80,q: 60}) + ')' }" class="h-0 pt-[100%] block bg-cover bg-no-repeat bg-center"></span>
