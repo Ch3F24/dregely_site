@@ -17,7 +17,7 @@ class PhotoCollection extends JsonResource
     {
 
         if($this->resource->hasImage('photos')) {
-            $photos = $this->resource->imagesAsArrays('photos','default',['w' => 1024,'q' => 90]);
+            $photos = $this->resource->imagesAsArrays('photos','default',['w' => 1024,'q' => 80]);
         }
         return [
             'title' => $this->title,
