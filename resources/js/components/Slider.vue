@@ -11,22 +11,14 @@
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             }"
-            :pagination="{
-                clickable: true,
-                enabled: false,
-                type: 'bullets',
-                el: '.swiper-pagination',
-            }"
+
             :breakpoints="{
               '768': {
                 slidesPerView: slidesPerView,
                 navigation: {
                     enabled:true,
                 },
-                pagination: {
-                    enabled: dots
-                }
-              },
+             },
             }"
             :centerInsufficientSlides="true"
             class="work-slider h-full">
@@ -76,8 +68,8 @@
             </svg>
         </div>
     </div>
-    <div class="relative md:flex items-center md:justify-center min-h-[10%] md:px-12">
-        <div class="md:w-1/3 flex space-x-4 h-full items-center" v-if="withThumb && activeSlide && activeSlide.photos && activeSlide.photos.length > 1">
+    <div class="relative md:flex items-center md:justify-center min-h-[10%] md:px-12 space-x-4">
+        <div class="md:w-1/2 flex space-x-4 h-full items-center" v-if="withThumb && activeSlide && activeSlide.photos && activeSlide.photos.length > 1">
             <div class="w-1/3 z-50 cursor-pointer" v-if="withThumb && activeSlide && activeSlide.photos && activeSlide.photos.length > 1"
                  v-for="(thumb,key) in activeSlide.photos"
                  @click="selectThumbnail(key)">
@@ -85,10 +77,10 @@
 <!--                <img loading="lazy" :src="thumb['src']" alt="first" class="w-[100px] h-[100px] object-cover">-->
             </div>
         </div>
-        <div class="md:w-1/3 h-full" v-if="dots">
-            <div class="swiper-pagination"></div>
-        </div>
-        <div class="md:w-1/3 mt-4 md:mt-0">
+<!--        <div class="md:w-1/3 h-full" v-if="dots">-->
+<!--            <div class="swiper-pagination"></div>-->
+<!--        </div>-->
+        <div class="md:w-1/2 mt-4 md:mt-0">
             <div v-if="activeSlide && isImage">
                 <p>
                     <span class="font-medium" v-if="activeSlide.title">{{ activeSlide.title }}</span>
