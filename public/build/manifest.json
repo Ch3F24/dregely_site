@@ -36,7 +36,7 @@
     ]
   },
   "resources/js/slider.js": {
-    "file": "assets/slider.2d21be8e.js",
+    "file": "assets/slider.ce2788da.js",
     "src": "resources/js/slider.js",
     "isEntry": true,
     "imports": [
@@ -75,13 +75,13 @@
       "assets/lazyload.7b1f8205.css"
     ]
   },
-  "resources/js/works_slider.css": {
-    "file": "assets/works_slider.b74d03b4.css",
-    "src": "resources/js/works_slider.css"
-  },
   "resources/js/slider.css": {
     "file": "assets/slider.2f3589b1.css",
     "src": "resources/js/slider.css"
+  },
+  "resources/js/works_slider.css": {
+    "file": "assets/works_slider.b74d03b4.css",
+    "src": "resources/js/works_slider.css"
   },
   "resources/js/app.css": {
     "file": "assets/app.ea3c6d95.css",

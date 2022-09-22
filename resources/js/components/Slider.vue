@@ -81,7 +81,7 @@
             <div class="w-1/3 z-50 cursor-pointer" v-if="withThumb && activeSlide && activeSlide.photos && activeSlide.photos.length > 1"
                  v-for="(thumb,key) in activeSlide.photos"
                  @click="selectThumbnail(key)">
-                    <span :style="{ backgroundImage: 'url(' + thumb['src'] + ')' }" class="h-0 pt-[100%] block bg-cover bg-no-repeat bg-center"></span>
+                    <span :data-bg="resize(thumb,{w: 120,h:120,q: 60})" class="h-0 pt-[100%] block bg-cover bg-no-repeat bg-center lazy"></span>
 <!--                <img loading="lazy" :src="thumb['src']" alt="first" class="w-[100px] h-[100px] object-cover">-->
             </div>
         </div>
