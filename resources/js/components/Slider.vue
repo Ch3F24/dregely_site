@@ -88,8 +88,8 @@
         <div class="md:w-1/3 h-full hidden md:block" v-if="dots">
             <div class="swiper-pagination"></div>
         </div>
-        <div class="mt-4 md:mt-0" :class="{'md:w-1/3' : dots,'md:w-1/2' : !dots,'text-center': activeSlide.photos && activeSlide.photos.length <= 1 || !withThumb}">
-            <div v-if="activeSlide && isImage">
+        <div class="mt-4 md:mt-0" :class="{'md:w-1/3' : dots,'md:w-1/2' : !dots}">
+            <div v-if="activeSlide && isImage" :class="{'text-center': activeSlide.photos && activeSlide.photos.length <= 1 || !withThumb}">
                 <p>
                     <span class="font-medium" v-if="activeSlide.title">{{ activeSlide.title }}</span>
                     <span v-if="activeSlide.year">, {{ activeSlide.year }}</span>

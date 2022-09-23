@@ -36,7 +36,7 @@
     ]
   },
   "resources/js/slider.js": {
-    "file": "assets/slider.443af7ef.js",
+    "file": "assets/slider.7ea717fc.js",
     "src": "resources/js/slider.js",
     "isEntry": true,
     "imports": [
@@ -83,13 +83,13 @@
     "file": "assets/works_slider.b74d03b4.css",
     "src": "resources/js/works_slider.css"
   },
-  "lazyload.css": {
-    "file": "assets/lazyload.7b1f8205.css",
-    "src": "lazyload.css"
-  },
   "resources/js/admin.css": {
     "file": "assets/admin.592eae80.css",
     "src": "resources/js/admin.css"
+  },
+  "lazyload.css": {
+    "file": "assets/lazyload.7b1f8205.css",
+    "src": "lazyload.css"
   },
   "resources/js/app.css": {
     "file": "assets/app.19fb96fb.css",
