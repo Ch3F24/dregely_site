@@ -86,7 +86,7 @@ export default {
             myLazyLoad.update();
         })
         this.lang = document.documentElement.lang;
-        this.initParentLinks();
+        // this.initParentLinks();
     },
     methods: {
         initParentLinks() {

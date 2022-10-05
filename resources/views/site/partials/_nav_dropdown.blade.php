@@ -9,7 +9,9 @@
         </p>
     @endif
     @if(count($links))
-        <ul class="pl-4 my-2 scrollbar overflow-x-hidden scrollbar-thin scrollbar-thumb-dgrey scrollbar-thumb-rounded scrollbar-track-rounded" x-show="open" style="display: none"
+        <ul class="pl-4 my-2 scrollbar overflow-x-hidden scrollbar-thin scrollbar-thumb-dgrey scrollbar-thumb-rounded scrollbar-track-rounded"
+            @if(isset($gallery)) id="gallery-list" @endif
+            x-show="open" style="display: none"
             x-transition:enter="transition ease-out duration-1000"
             x-transition:enter-start="opacity-0 translate-y-1"
             x-transition:enter-end="opacity-100 translate-y-0"
@@ -20,9 +22,9 @@
                 @if($link->child && count($link->child))
                     <li x-data="{ child: false }" x-init="child = {{ request()->is(app()->getLocale() . '/' . $part . '/parent/*') ? 'true' : 'false' }}">
                         @if(isset($gallery))
-{{--                            <a href="{{ route( 'work.parent',$link->slug) }}">--}}
-                            <p class="gallery-parent" data-link="{{ route('api.work.parent',$link->slug) }}">
-                                <span :class="child ? 'font-medium' : ''" @click="child = ! child" class="cursor-pointer hover:font-medium {{ (request()->is(app()->getLocale() . '/' . $part .  '/parent/*')) ? 'font-medium' : '' }}">{{ $link->title }}</span>
+                            <a href="{{ route( 'work.parent',$link->slug) }}">
+{{--                            <p class="gallery-parent" data-link="{{ route('api.work.parent',$link->slug) }}">--}}
+                                <span :class="child ? 'font-medium' : ''" @click="child = ! child" class="cursor-pointer hover:font-medium {{ (request()->is(app()->getLocale() . '/' . $part .  '/parent/*')) ? 'font-medium active' : '' }}">{{ $link->title }}</span>
                             </p>
                         @else
                             <p>

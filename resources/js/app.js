@@ -20,4 +20,8 @@ setMainHeight();
 
 addEventListener('resize', setMainHeight);
 
-
+const myElement = document.querySelectorAll('#gallery-list')[1];
+const activeElement = myElement.querySelector('.active');
+setTimeout(() => {
+    myElement.scrollTop = activeElement.offsetTop - myElement.offsetTop
+},200)
