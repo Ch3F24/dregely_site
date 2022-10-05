@@ -46,7 +46,7 @@
             </swiper-slide>
 
             <swiper-slide v-else class="flex-row h-full swiper-no-swiping" :class="{'full-w' : slidesPerView === 1}" v-for="(slide,key) in slides">
-                <div class="w-full h-full slide-image" v-if="description && key === 0" v-html="description">
+                <div class="w-full h-full slide-image overflow-hidden" v-if="description && key === 0" v-html="description">
                 </div>
 
 <!--                <div class="w-full h-full slide-image swiper-no-swiping" v-else-if="isImage && slide.photos" :style="{ backgroundImage: 'url(' + slide.photos[0].src + ')' }">-->
