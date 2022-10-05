@@ -28,6 +28,6 @@ class WorkController extends Controller
 
     public function parent($slug)
     {
-        return WorksCollection::collection($this->repository->forSlug($slug)->child->sortByDesc('id'));
+        return WorksCollection::collection($this->repository->forSlug($slug)->child->sortBy('id'));
     }
 }
