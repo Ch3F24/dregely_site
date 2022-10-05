@@ -6,11 +6,11 @@
 @endsection
 
 @section('content')
-    @if(count($work->photos))
+{{--    @if(count($work->photos))--}}
         <div id="app" class="h-full w-full flex flex-col">
             <slider route="{{ route('api.photo.index',$work->id) }}" :with-thumb="true" :is-image="true" description="{{ $work->description }}"></slider>
         </div>
-    @endif
+{{--    @endif--}}
 @endsection
 
 @section('assets')

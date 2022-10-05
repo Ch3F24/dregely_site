@@ -25,7 +25,7 @@
               },
             }"
             class="work-slider h-full w-full">
-            <swiper-slide class="flex-row h-80 lg:h-full w-full" v-for="slide in slides">
+            <swiper-slide class="flex-row h-80 lg:h-full w-full" v-for="slide in slides" v-if="loaded">
                 <a :href="'/' + lang + '/work/' + slide.slug" class="w-full h-full z-10 swiper-no-swiping flex flex-col" :title="slide.title">
                     <div class="w-full flex-1 overflow-hidden">
                         <div class="h-full w-full bg-cover bg-no-repeat bg-center hover:scale-110 transition-transform bg-dgrey	lazy" :data-bg="slide.cover" ></div>
@@ -65,8 +65,9 @@ export default {
             slides: [],
             modules: [Pagination, Navigation, Grid],
             currentIndex: 0,
-            activeSlide: [],
-            lang: ''
+            // activeSlide: [],
+            lang: '',
+            loaded: false
       }
     },
     props: {
@@ -85,12 +86,32 @@ export default {
             myLazyLoad.update();
         })
         this.lang = document.documentElement.lang;
+        this.initParentLinks();
     },
     methods: {
-        loadSlides() {
-            return Axios.get(this.action).then(e => {
+        initParentLinks() {
+            const parents = document.querySelectorAll('.gallery-parent');
+            parents.forEach((p) => {
+                let _this = this
+                p.addEventListener('click',function() {
+                    _this.loaded = false
+                    console.log(p.dataset.link)
+                    _this.loadSlides(p.dataset.link).then(() => {
+                        myLazyLoad = new LazyLoad({
+                            elements_selector: '.lazy',
+                            class_loaded: 'lazy-loaded',
+                        });
+                        myLazyLoad.update();
+                        _this.loaded = true
+                    })
+                })
+            })
+        },
+        loadSlides(action = this.action) {
+            return Axios.get(action).then(e => {
                 this.slides = e.data.data
-                this.activeSlide = e.data.data[0]
+                this.loaded = true
+                // this.activeSlide = e.data.data[0]
             }).catch(e => {
                 console.log(e)
             })

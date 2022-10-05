@@ -20,9 +20,10 @@
                 @if($link->child && count($link->child))
                     <li x-data="{ child: false }" x-init="child = {{ request()->is(app()->getLocale() . '/' . $part . '/parent/*') ? 'true' : 'false' }}">
                         @if(isset($gallery))
-                            <a href="{{ route( 'work.parent',$link->slug) }}">
+{{--                            <a href="{{ route( 'work.parent',$link->slug) }}">--}}
+                            <p class="gallery-parent" data-link="{{ route('api.work.parent',$link->slug) }}">
                                 <span :class="child ? 'font-medium' : ''" @click="child = ! child" class="cursor-pointer hover:font-medium {{ (request()->is(app()->getLocale() . '/' . $part .  '/parent/*')) ? 'font-medium' : '' }}">{{ $link->title }}</span>
-                            </a>
+                            </p>
                         @else
                             <p>
                                 <span :class="child ? 'font-medium' : '' " @click="child = ! child" class="cursor-pointer hover:font-medium">{{ $link->title }}</span>
