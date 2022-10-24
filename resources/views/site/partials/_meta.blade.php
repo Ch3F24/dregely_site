@@ -22,12 +22,13 @@
 <meta name="twitter:title" content="Twitter leiras">
 <meta name="twitter:description" content="{{ isset($meta->meta_description) ? $meta->meta_description : $site_description ?? '' }}">
 
-@if(isset($meta->title) && count($meta->tags))
-    @foreach($meta->tags as $tag)
-        <meta name="art:tag" content="{{ $tag->name }}">
-    @endforeach
+@if(isset($meta->title) && isset($meta->keywords))
+{{--    @foreach($meta->tags as $tag)--}}
+{{--        <meta name="art:tag" content="{{ $tag->name }}">--}}
+{{--    @endforeach--}}
 
-    <meta name="keywords" content="{{ $site_keywords }},{{ implode(',',$meta->tags->pluck('name')->toArray()) }}">
+{{--    <meta name="keywords" content="{{ $site_keywords }},{{ implode(',',$meta->tags->pluck('name')->toArray()) }}">--}}
+    <meta name="keywords" content="@if($site_keywords){{ $site_keywords }},@endif{{ $meta->keywords }}">
 @else
     <meta name="keywords" content="{{ $site_keywords }}">
 @endif

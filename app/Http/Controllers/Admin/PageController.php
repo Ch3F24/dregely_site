@@ -8,9 +8,12 @@ class PageController extends BaseModuleController
 {
     protected $moduleName = 'pages';
 
+    protected $permalinkBase = '';
+
     protected $defaultOrders = ['id' => 'desc'];
 
     protected $indexOptions = [
-        'reorder' => true,
+//        'reorder' => true,
+//        'permalink' => false
     ];
 }

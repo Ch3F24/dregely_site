@@ -21,12 +21,14 @@ class Page extends Model implements Sortable,LocalizedUrlRoutable
         'published',
         'title',
         'meta_description',
+        'keywords',
         'position',
     ];
 
     public $translatedAttributes = [
         'title',
         'meta_description',
+        'keywords',
         'active',
     ];
 

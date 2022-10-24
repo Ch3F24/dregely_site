@@ -19,6 +19,10 @@ class PhotoController extends BaseModuleController
 
     protected $perPage = 10;
 
+    protected $indexOptions = [
+        'permalink' => false
+    ];
+
     // Optional, specify the default listing order
     protected $defaultOrders = ['id' => 'asc'];
 

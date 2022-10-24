@@ -42,7 +42,7 @@ class AppServiceProvider extends ServiceProvider
 
         if (Schema::hasTable('works')) {
             $works = Cache::remember('works',CarbonInterval::week(),function () {
-                return Work::query()->published()->doesntHave('parent')->get();
+                return Work::query()->published()->doesntHave('parent')->orderBy('position')->get();
             });
         }
 
@@ -54,22 +54,22 @@ class AppServiceProvider extends ServiceProvider
 
         if (Schema::hasTable('exhibitions')) {
             $exhibitions = Cache::remember('exhibitions',CarbonInterval::week(),function () {
-               return  app(ExhibitionRepository::class)->all()->where('published');
+               return  app(ExhibitionRepository::class)->all()->where('published')->sortBy('position');
             });
         }
 
         if (Schema::hasTable('installations')) {
             $installations = Cache::remember('installation',CarbonInterval::week(),function () {
-                return app(InstallationRepository::class)->all()->where('published');
+                return app(InstallationRepository::class)->all()->where('published')->sortBy('position');
             });
         }
 
         if (Schema::hasTable('videos')) {
             $videos = Cache::remember('videos',CarbonInterval::week(),function () {
-                return app(VideoRepository::class)->all()->where('published');
+                return app(VideoRepository::class)->all()->where('published')->sortBy('position');
             });
         }
-        if (Schema::hasTable('videos')) {
+        if (Schema::hasTable('settings')) {
             $site_keywords = app(SettingRepository::class)->byKey('keywords');
             $site_description = app(SettingRepository::class)->byKey('meta_description');
         }

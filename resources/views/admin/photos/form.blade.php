@@ -54,7 +54,7 @@
         ],
     ])
 
-    @section('sideFieldset')
-        @include('admin.partials.seo')
-    @endsection
+{{--    @section('sideFieldset')--}}
+{{--        @include('admin.partials.seo')--}}
+{{--    @endsection--}}
 @stop

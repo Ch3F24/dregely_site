@@ -19,6 +19,7 @@ class Work extends Model implements Sortable
         'published',
         'title',
         'meta_description',
+        'keywords',
         'position',
         'parent_work_id',
         'year',
@@ -29,6 +30,7 @@ class Work extends Model implements Sortable
     public $translatedAttributes = [
         'title',
         'meta_description',
+        'keywords',
         'description',
         'active',
     ];
@@ -64,7 +66,7 @@ class Work extends Model implements Sortable
 
     public function child()
     {
-        return $this->hasMany(Work::class,'parent_work_id','id');
+        return $this->hasMany(Work::class,'parent_work_id','id')->orderBy('position');
     }
     public function parent()
     {

@@ -23,11 +23,11 @@ class WorkController extends Controller
      */
     public function index()
     {
-        return WorksCollection::collection(Work::doesntHave('child')->published()->orderBy('id')->get());
+        return WorksCollection::collection(Work::doesntHave('child')->published()->orderBy('position')->get());
     }
 
     public function parent($slug)
     {
-        return WorksCollection::collection($this->repository->forSlug($slug)->child->sortBy('id'));
+        return WorksCollection::collection($this->repository->forSlug($slug)->child->sortBy('position'));
     }
 }

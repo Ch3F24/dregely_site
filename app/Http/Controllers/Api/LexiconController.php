@@ -11,7 +11,7 @@ class LexiconController extends Controller
 {
     public function index()
     {
-        $lexicon = app(LexiconRepository::class)->all()->where('published')->sortByDesc('id');
+        $lexicon = app(LexiconRepository::class)->all()->where('published')->sortBy('position');
 
         return LexiconCollection::collection($lexicon);
     }
