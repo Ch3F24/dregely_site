@@ -93,10 +93,10 @@ class DatabaseSeeder extends Seeder
 
         // \App\Models\User::factory(10)->create();
 //            Lexicon::factory(10)->create();
-            LexiconFactory::new()->count(10)->create();
-            ArticleFactory::new()->count(10)->create();
-            PublicationFactory::new()->count(10)->create();
-//            WorkFactory::new()->count(15)->create();
+//            LexiconFactory::new()->count(10)->create();
+//            ArticleFactory::new()->count(10)->create();
+//            PublicationFactory::new()->count(10)->create();
+//            WorkFactory::new()->count(15)->create();/
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
