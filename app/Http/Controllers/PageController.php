@@ -81,7 +81,7 @@ class PageController extends BaseController
 
         $input = $request->input();
 
-        Notification::route('mail','test@test.hu')
+        Notification::route('mail','suranyi.mihaly@gmail.com')
             ->notify(new ContactNotification($input));
 
         return back()->with('status',__('Message sent'));
