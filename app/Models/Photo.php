@@ -17,8 +17,8 @@ class Photo extends Model implements Sortable
     protected $fillable = [
         'published',
         'title',
-        'meta_description',
-        'keywords',
+//        'meta_description',
+//        'keywords',
         'print',
         'edition_number',
         'size',
@@ -32,8 +32,8 @@ class Photo extends Model implements Sortable
         'title',
         'print',
         'active',
-        'meta_description',
-        'keywords'
+//        'meta_description',
+//        'keywords'
     ];
 
     public $slugAttributes = [
