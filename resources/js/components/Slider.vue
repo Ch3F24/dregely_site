@@ -111,7 +111,7 @@
         <vue-easy-lightbox
             v-if="open && isImage"
             :visible="open"
-            :imgs="resize(activeSlide.photos[thumbnailIndex])"
+            :imgs="getOriginalImg(activeSlide.photos[thumbnailIndex])"
             @hide="openGallery"
         >
         </vue-easy-lightbox>
@@ -218,6 +218,9 @@ export default {
             }).join('&');
 
             return src + '?' + queryString;
+        },
+        getOriginalImg(image) {
+            return image.src.split('?'[0])[0].replace('/img','/storage/uploads');
         },
         onHorizontalSlideChange(swiper) {
             this.thumbnailIndex = 0;
