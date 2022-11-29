@@ -1,6 +1,6 @@
 import './bootstrap';
 import '../css/app.css';
-// document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('contextmenu', event => event.preventDefault());
 
 const mediaQuery = window.matchMedia('(min-width: 768px)')
 const main = document.querySelector('main');
