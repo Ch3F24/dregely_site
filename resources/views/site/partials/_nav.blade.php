@@ -6,7 +6,7 @@
 
     @include('site.partials._nav_dropdown',[
         'part' => 'work',
-        'title' => __('Gellery'),
+        'title' => __('Gallery'),
         'links' => $works_menu,
         'gallery' => true
     ])
