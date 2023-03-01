@@ -69,10 +69,10 @@ class AppServiceProvider extends ServiceProvider
                 return app(VideoRepository::class)->all()->where('published')->sortBy('position');
             });
         }
-//        if (Schema::hasTable('settings')) {
+        if (Schema::hasTable('settings')) {
             $site_keywords = app(SettingRepository::class)->byKey('keywords');
             $site_description = app(SettingRepository::class)->byKey('meta_description');
-//        }
+        }
 
         view()->share([
             'works_menu' => $works,

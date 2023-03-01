@@ -5,7 +5,9 @@ namespace App\Providers;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Event;
+use Spatie\ResponseCache\Facades\ResponseCache;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -27,7 +29,10 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Event::listen('cms-settings.saved', function ($eventName, array $data) {
+            Cache::flush();
+            ResponseCache::clear();
+        });
     }
 
     /**
