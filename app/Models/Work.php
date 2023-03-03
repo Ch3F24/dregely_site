@@ -77,4 +77,13 @@ class Work extends Model implements Sortable
     {
         return $this->hasMany(Photo::class)->where('published',1);
     }
+
+    public function scopeForSlug($query, $slug)
+    {
+        return $query->whereHas('slugs', function ($query) use ($slug) {
+            $query->whereSlug($slug);
+            $query->whereActive(true);
+//            $query->whereLocale(app()->getLocale());
+        })->with(['slugs']);
+    }
 }

@@ -53,7 +53,7 @@
 
         <div class="w-full md:w-2/12 lg:w-4/12 text-right">
             <p>
-                <a href="facebook.com" class="inline-block">
+                <a href="https://www.facebook.com/imre.dregely" class="inline-block">
                     <img src="{{ asset('assets/images/facebook.png') }}" width="40" alt="facebook logo">
                 </a>
             </p>

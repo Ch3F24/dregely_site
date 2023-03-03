@@ -1,6 +1,6 @@
 <title>{{ config('app.name', 'Laravel')  }} {{ isset($title) ? ' - ' . $title : '' }} {{ isset($meta->title) ? ' - ' . $meta->title : ''}}</title>
 {{--<title>{{ config('app.name', 'Laravel') . isset($meta->title) ? ' - ' . $meta->title : ''}}</title>--}}
-<meta data-n-head="ssr" data-hid="description" name="description" content="{{ isset($meta->meta_description) ? $meta->meta_description : $site_description ?? '' }}">
+<meta name="description" content="{{ isset($meta->meta_description) ? $meta->meta_description : $site_description ?? '' }}">
 <meta property="og:site_name" content="{{ config('app.name', 'Laravel') }}">
 <meta data-hid="charset" charset="utf-8">
 <meta data-hid="mobile-web-app-capable" name="mobile-web-app-capable" content="yes">
