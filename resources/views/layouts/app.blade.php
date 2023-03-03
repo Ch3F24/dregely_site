@@ -45,7 +45,7 @@
 </body>
 
 @yield('assets')
-{{--@include('front/partials/_analytics')--}}
 <script src="//unpkg.com/alpinejs" defer></script>
+@include('site/partials/_analytics')
 
 </html>
