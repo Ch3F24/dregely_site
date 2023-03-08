@@ -8,18 +8,11 @@
     "src": "public/fonts/CamptonMedium.otf"
   },
   "resources/js/app.js": {
-    "file": "assets/app.8279d7c1.js",
+    "file": "assets/app.fcdaa406.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
       "_index.83bc9570.js"
-    ],
-    "css": [
-      "assets/app.19fb96fb.css"
-    ],
-    "assets": [
-      "assets/CamptonBook.fa43203c.otf",
-      "assets/CamptonMedium.c0246a50.otf"
     ]
   },
   "resources/js/works_slider.js": {
@@ -75,10 +68,6 @@
       "assets/lazyload.7b1f8205.css"
     ]
   },
-  "resources/js/slider.css": {
-    "file": "assets/slider.2f3589b1.css",
-    "src": "resources/js/slider.css"
-  },
   "resources/js/works_slider.css": {
     "file": "assets/works_slider.b74d03b4.css",
     "src": "resources/js/works_slider.css"
@@ -87,12 +76,17 @@
     "file": "assets/lazyload.7b1f8205.css",
     "src": "lazyload.css"
   },
-  "resources/js/app.css": {
-    "file": "assets/app.19fb96fb.css",
-    "src": "resources/js/app.css"
+  "resources/js/slider.css": {
+    "file": "assets/slider.2f3589b1.css",
+    "src": "resources/js/slider.css"
   },
   "resources/js/admin.css": {
     "file": "assets/admin.592eae80.css",
     "src": "resources/js/admin.css"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app.9036314d.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
   }
 }

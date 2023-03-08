@@ -13,7 +13,7 @@
 {{--    <meta name="og:site_name" content="{{ config('app.name') }}">--}}
     @yield('meta')
 
-    @vite('resources/js/app.js')
+    @vite('resources/css/app.css')
     @yield('css')
 
 </head>
@@ -43,7 +43,7 @@
 {{--    @include('front/partials/_footer')--}}
 
 </body>
-
+@vite('resources/js/app.js')
 @yield('assets')
 <script src="//unpkg.com/alpinejs" defer></script>
 @include('site/partials/_analytics')

@@ -1,5 +1,5 @@
 import './bootstrap';
-import '../css/app.css';
+// import '../css/app.css';
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 const mediaQuery = window.matchMedia('(min-width: 768px)')
@@ -22,6 +22,8 @@ addEventListener('resize', setMainHeight);
 
 const myElement = document.querySelectorAll('#gallery-list')[1];
 const activeElement = myElement.querySelector('.active');
-setTimeout(() => {
-    myElement.scrollTop = activeElement.offsetTop - myElement.offsetTop
-},200)
+if (activeElement) {
+    setTimeout(() => {
+        myElement.scrollTop = activeElement.offsetTop - myElement.offsetTop
+    },200)
+}

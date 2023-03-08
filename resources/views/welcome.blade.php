@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @include('site/partials/_meta')
-    @vite('resources/js/app.js')
+    @vite('resources/css/app.css')
     @yield('css')
 
 </head>
@@ -18,10 +18,9 @@
             <a href="{{ route('home') }}" class=" text-5xl font-bold text-white">Drégely<br>Imre</a>
         </div>
     </header>
-{{--    <div></div>--}}
-{{--<body class="relative h-full">--}}
-{{--@include('site.partials._header')--}}
-
+    <main class="invisible">
+        <h1>Drégely Imre</h1>
+    </main>
 </body>
 
 @yield('assets')

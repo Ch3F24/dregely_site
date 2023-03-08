@@ -1,11 +1,11 @@
 <div x-data="{ open: false }" x-init="open = {{ request()->is(app()->getLocale() . '/' . $part . '*') ? 'true' : 'false' }}">
     @if(isset($gallery))
         <a href="{{ route( 'work.index') }}">
-            <span :class="open ? 'font-medium' : ''" @click="open = ! open" class="cursor-pointer hover:font-medium {{ (request()->is(app()->getLocale() . '/' . $part . '*')) ? 'font-medium' : '' }}">{{ $title }}</span>
+            <span :class="open ? 'font-medium' : ''" @click="open = ! open" class="cursor-pointer hover:font-medium {{ (request()->is(app()->getLocale() . '/' . $part . '*')) ? 'font-medium active' : '' }}">{{ $title }}</span>
         </a>
     @else
         <p>
-            <span :class="open ? 'font-medium' : ''" @click="open = ! open" class="cursor-pointer hover:font-medium {{ (request()->is(app()->getLocale() . '/' . $part . '*')) ? 'font-medium' : '' }}">{{ $title }}</span>
+            <span :class="open ? 'font-medium' : ''" @click="open = ! open" class="cursor-pointer hover:font-medium {{ (request()->is(app()->getLocale() . '/' . $part . '*')) ? 'font-medium active' : '' }}">{{ $title }}</span>
         </p>
     @endif
     @if(count($links))
@@ -46,7 +46,7 @@
                         </ul>
                     </li>
                 @else
-                    <li><a href="{{ route($part . '.view',$link->slug) }}" class="{{ (request()->is(app()->getLocale() . '/' . $part . '/' . $link->slug)) ? 'font-medium' : '' }}" >{{ $link->title }}</a></li>
+                    <li><a href="{{ route($part . '.view',$link->slug) }}" class="{{ (request()->is(app()->getLocale() . '/' . $part . '/' . $link->slug)) ? 'font-medium active' : '' }}" >{{ $link->title }}</a></li>
                 @endif
             @endforeach
         </ul>
