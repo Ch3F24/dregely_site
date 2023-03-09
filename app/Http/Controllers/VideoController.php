@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\VideoResource;
 use App\Models\Video;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class VideoController extends Controller
 {
+    public function index(): RedirectResponse
+    {
+        return redirect()->route('home');
+    }
+
     public function view(Video $video)
     {
         return view('site.pages.slider')->with([

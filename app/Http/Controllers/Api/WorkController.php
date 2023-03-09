@@ -7,6 +7,7 @@ use App\Http\Resources\WorksCollection;
 use App\Models\Work;
 use App\Repositories\WorkRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class WorkController extends Controller
 {
@@ -23,7 +24,12 @@ class WorkController extends Controller
      */
     public function index()
     {
-        return WorksCollection::collection(Work::doesntHave('child')->published()->orderBy('position')->get());
+        return WorksCollection::collection(
+            Work::doesntHave('child')->published()->whereHas('slugs', function ($query) {
+            $query->whereActive(true);
+            $query->whereLocale(App::getLocale());
+            })->orderBy('position')->get()
+        );
     }
 
     public function parent($slug)

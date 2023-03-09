@@ -1,15 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-if (! function_exists('navLink')) {
-    function navLink($slug)
+if (! function_exists('translatedRoutePart')) {
+    function translatedRoutePart($part)
     {
-//        return Route::currentRouteName();
+        if (app()->getLocale() == 'en') {
+            return app()->getLocale() . '/' . LaravelLocalization::transRoute('routes.nav.' . $part);
+        }
 
-//        return Route::
-//        \Illuminate\Support\Str::is('works*', Route::currentRouteName());
-
-//        return Route::currentRouteName() === $active ? $default . ' active' : $default;
+        return LaravelLocalization::transRoute('routes.nav.' . $part);
     }
 }

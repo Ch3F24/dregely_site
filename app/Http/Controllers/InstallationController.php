@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\ExhibitionsResource;
 use App\Models\Installation;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class InstallationController extends Controller
 {
+    public function index(): RedirectResponse
+    {
+        return redirect()->route('home');
+    }
+
     public function view(Installation $installation)
     {
         return view('site.pages.slider')->with([

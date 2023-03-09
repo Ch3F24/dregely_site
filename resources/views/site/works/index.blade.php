@@ -10,7 +10,9 @@
 
 @section('content')
     <div id="app" class="h-full w-full flex flex-col">
-        <grid-slider action="{{ $action }}"/>
+        <grid-slider action="{{ $action }}"
+                     route="{{ LaravelLocalization::transRoute('routes.work') }}">
+        </grid-slider>
     </div>
     {{--    <div class="container p-0 relative flex-1 slider-container">--}}
 {{--        <div class="swiper mySwiper swiper-grid-column">--}}

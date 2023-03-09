@@ -10,8 +10,9 @@ use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
 use App\Repositories\WorkRepository;
+use Mcamara\LaravelLocalization\Interfaces\LocalizedUrlRoutable;
 
-class Work extends Model implements Sortable
+class Work extends Model implements Sortable,LocalizedUrlRoutable
 {
     use HasTranslation, HasSlug, HasMedias, HasFiles, HasPosition;
 
@@ -83,7 +84,7 @@ class Work extends Model implements Sortable
         return $query->whereHas('slugs', function ($query) use ($slug) {
             $query->whereSlug($slug);
             $query->whereActive(true);
-//            $query->whereLocale(app()->getLocale());
+            $query->whereLocale(app()->getLocale());
         })->with(['slugs']);
     }
 }

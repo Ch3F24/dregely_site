@@ -62,7 +62,7 @@ return [
     | locale. Note that 'use_fallback' must be enabled.
     |
      */
-    'use_property_fallback' => true,
+    'use_property_fallback' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -74,7 +74,7 @@ return [
     | set it to false.
     |
      */
-    'fallback_locale' => 'en',
+    'fallback_locale' => null,
 
     /*
     |--------------------------------------------------------------------------

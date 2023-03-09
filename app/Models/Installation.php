@@ -9,8 +9,10 @@ use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
 use App\Repositories\InstallationRepository;
+use Mcamara\LaravelLocalization\Interfaces\LocalizedUrlRoutable;
 
-class Installation extends Model implements Sortable
+
+class Installation extends Model implements Sortable, LocalizedUrlRoutable
 {
     use HasTranslation, HasSlug, HasMedias, HasPosition;
 

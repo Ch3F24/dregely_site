@@ -6,11 +6,17 @@ use App\Http\Resources\ExhibitionsCollection;
 use App\Http\Resources\ExhibitionsResource;
 use App\Models\Exhibition;
 use App\Repositories\WorkRepository;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class ExhibitionController extends Controller
 {
-    public function view(Exhibition $exhibition)
+    public function index(): RedirectResponse
+    {
+        return redirect()->route('home');
+    }
+
+    public function view(Exhibition $exhibition): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
     {
         return view('site.pages.slider')->with([
             'data' => $exhibition,
@@ -25,7 +31,7 @@ class ExhibitionController extends Controller
         ]);
     }
 
-    public function photos(Request $request)
+    public function photos(Request $request): ExhibitionsResource
     {
         $exhibition = Exhibition::query()->findOrFail($request->id);
 
