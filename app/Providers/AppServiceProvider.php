@@ -103,7 +103,7 @@ class AppServiceProvider extends ServiceProvider
         }
 
         if (Schema::hasTable('settings')) {
-            $site_keywords = app(SettingRepository::class)->byKey('keywords');
+            $site_keywords = str_replace(';',', ',app(SettingRepository::class)->byKey('keywords'));
             $site_description = app(SettingRepository::class)->byKey('meta_description');
         }
 

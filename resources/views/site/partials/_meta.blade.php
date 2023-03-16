@@ -28,7 +28,7 @@
 {{--    @endforeach--}}
 
 {{--    <meta name="keywords" content="{{ $site_keywords }},{{ implode(',',$meta->tags->pluck('name')->toArray()) }}">--}}
-    <meta name="keywords" content="@if($site_keywords){{ $site_keywords }},@endif{{ $meta->keywords }}">
+    <meta name="keywords" content="@if($site_keywords){{ $site_keywords }},@endif @if($meta->keywords) {{ str_replace(';',', ',$meta->keywords) }} @endif">
 @else
     <meta name="keywords" content="{{ $site_keywords }}">
 @endif
