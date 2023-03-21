@@ -31,7 +31,7 @@ class WorkController extends BaseController
     public function parent($slug)
     {
         return view('site.works.index')->with([
-            'action' => route('api.work.parent',$slug)
+            'action' => route('api.work.index')
         ]);
     }
 

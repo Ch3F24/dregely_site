@@ -26,7 +26,7 @@
             }"
             class="work-slider h-full w-full">
             <swiper-slide class="flex-row h-80 lg:h-full w-full" v-for="slide in slides" v-if="loaded">
-                <a :href="getRoute(slide.slug)" class="w-full h-full z-10 swiper-no-swiping flex flex-col" :title="slide.title">
+                <a :href="'/' + getRoute(slide.slug)" class="w-full h-full z-10 swiper-no-swiping flex flex-col" :title="slide.title">
                     <div class="w-full flex-1 overflow-hidden">
                         <div class="h-full w-full bg-cover bg-no-repeat bg-center hover:scale-110 transition-transform bg-dgrey	lazy" :data-bg="slide.cover" ></div>
                     </div>

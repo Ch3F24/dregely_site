@@ -3,7 +3,7 @@
 return [
     'works' => 'galeria',
     'work' => 'galeria/{work}',
-    'parent' => 'parent/{work}',
+    'parent' => 'galeria/parent/{work}',
     'exhibition' => 'kiallitas/{exhibition}',
     'exhibitions' => 'kiallitas',
     'installation' => 'installaciok/{installation}',
